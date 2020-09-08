@@ -2,7 +2,7 @@
     /* user-select: none; */
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .fa-2x {
@@ -11,7 +11,7 @@
 }
 
 #search-list {
-    position: relative
+    position: relative;
 }
 
 .search-group {
@@ -28,7 +28,7 @@
 }
 
 .search-group:hover .search-group-list {
-    display: block
+    display: block;
 }
 
 .search-group>span {
@@ -38,7 +38,7 @@
     font-size: 15px;
     font-weight: 700;
     color: #f44336;
-    width: 75px
+    width: 75px;
 }
 
 .search-group>span::after{
@@ -84,6 +84,8 @@
 .search-group-list label:hover {
     color: #f44336;
     cursor: pointer;
+    transform: scale(1.15);
+    transition: all .4s linear;
 }
 
 .search-group-list .tile-lg {
@@ -131,7 +133,7 @@
 .search-engines li label {
     display: inline-block;
     padding: 0 11px;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 31px;
     border-radius: 3px 3px 0 0;
     cursor: pointer;
@@ -144,12 +146,14 @@
 
 .search-engines input:hover+label span {
     color: rgb(244, 67, 54);
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
     transition: all .4s linear;
 }
 
 .search-engines input:checked+label span {
     border-bottom: solid 2px rgb(244, 67, 54);
     /* background-color: rgba(30, 30, 30, 0.7); */
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
     color: rgb(244, 67, 54);
 }
 

@@ -97,6 +97,7 @@ header {
 
 header:hover {
   background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
   transition: all .4s linear;
 }
 
@@ -169,6 +170,7 @@ nav ul {
 
 .searchbox form:hover {
   background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
   transition: all .4s linear;
 }
 
@@ -202,10 +204,12 @@ nav ul {
   border-radius: 1rem;
   display: grid;
   padding: 1rem;
+  /* box-shadow: 0 0 10px rgb(0, 0, 0, 0.6); */
 }
 
 .card:hover {
   background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
   transition: all .4s linear;
 }
 
