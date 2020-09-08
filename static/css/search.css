@@ -55,21 +55,21 @@
     left: 15px;
     padding: 9pt 0;
     width: 20pc;
-    background-color: rgba(30, 30, 30, 1.0);
+    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .16);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
 
 .search-group-list::before {
     position: absolute;
-    top: -1pc;
+    top: -1.2pc;
     left: 10px;
     content: ' ';
     display: block;
     width: 0;
     height: 0;
     border: 10px solid transparent;
-    border-bottom-color: rgba(30, 30, 30, 1.0)
+    border-bottom-color: rgba(0, 0, 0, 0.6)
 }
 
 .search-group-list label {
@@ -82,7 +82,8 @@
 }
 
 .search-group-list label:hover {
-    color: #2d6bc2
+    color: #f44336;
+    cursor: pointer;
 }
 
 .search-group-list .tile-lg {
