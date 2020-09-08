@@ -121,16 +121,27 @@ nav ul {
 /* --------------------------
  * hitokoto
 */
-#hitokoto {
-  text-align: center;
-  color:rgb(244, 67, 54);
+
+.hitokoto {
+  max-width: 717px;
+  margin: 0 auto;
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .hitokoto:hover {
   cursor: pointer;
+  text-decoration: underline #f44336;
 }
 
+#hitokoto, #hitokoto-from {
+  color:#f44336;
+}
+
+#hitokoto-from {
+  text-align: right;
+  margin-top: 1vh;
+}
 
 /* --------------------------
  * search

@@ -3,10 +3,10 @@
   {{- partial "head.html" . -}}
   
   {{ if .Site.Params.background }}
-    <body onload="init();" 
+    <body onload="init({{ .Site.Params.hitokoto }});"
       style="background: url({{ .Site.Params.background }}) top fixed no-repeat">
   {{ else }}
-    <body onload="init();">
+    <body onload="init({{ .Site.Params.hitokoto }});">
   {{ end }}
     
     {{- partial "header.html" . -}}

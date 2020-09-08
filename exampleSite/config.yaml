@@ -9,6 +9,10 @@ params:
   description: rfranzen.com
   favicon: /favicon.ico
   background: https://image.example.com/
+  # Type of hitokoto, for more information: 
+  # see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%82%E6%95%B0%EF%BC%89
+  # for multiple types, use & to connect them
+  hitokoto: c=i&c=h
 
   searchEngines:
     # Please ensure the group name and the search engine name is unique.
