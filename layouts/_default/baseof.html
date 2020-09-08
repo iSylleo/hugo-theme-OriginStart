@@ -2,7 +2,13 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
   {{- partial "head.html" . -}}
   
-  <body>
+  {{ if .Site.Params.background }}
+    <body onload="init();" 
+      style="background: url({{ .Site.Params.background }}) top fixed no-repeat">
+  {{ else }}
+    <body onload="init();">
+  {{ end }}
+    
     {{- partial "header.html" . -}}
   
     <main>

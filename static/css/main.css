@@ -90,9 +90,14 @@ h3 {
 */
 header {
   backdrop-filter: blur(.2rem);
-  background-color: rgba(0,0,0, 0.5);
+  /* background-color: rgba(0,0,0, 0.5); */
   font-size: 1rem;
   padding: 0.5rem;
+}
+
+header:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all .4s linear;
 }
 
 nav {
@@ -113,33 +118,59 @@ nav ul {
 .nav-left ul li { padding: 0 0.3rem; }
 .nav-right ul li { padding: 0 0.6rem; }
 
+/* --------------------------
+ * hitokoto
+*/
+#hitokoto {
+  text-align: center;
+  color:rgb(244, 67, 54);
+  margin-bottom: 2rem;
+}
+
+.hitokoto:hover {
+  cursor: pointer;
+}
+
 
 /* --------------------------
  * search
 */
 .search {
   backdrop-filter: blur(.1rem);
-  background-color: rgba(30, 30, 30, 0.7);
-  border-radius: 2rem;
-  margin: 3rem auto;
-  padding: 1rem;
+  /* background-color: rgba(30, 30, 30, 0.7); */
+  /* border-radius: 1.2rem; */
+  margin: 2rem auto;
+  padding: 0.5rem 0;
   text-align: center;
-  width: 30vw;
+  /* width: 60vw; */
+  max-width: 717px;
 }
 .searchbox {
   display: flex;
   flex-direction: column;
 }
 .searchbox form {
-  padding: 0.5rem;
+  /* padding: 1rem 0 0 0; */
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
 }
+
+.searchbox form:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all .4s linear;
+}
+
 .searchbox input {
   background: none;
   border: 0;
   border-bottom: solid 3px rgb(244, 67, 54);
-  line-height: 26px;
-  padding: 4px;
-  width: 70%;
+  height: 36px;
+  line-height: 36px;
+  font-size: 1.2pc;
+  color: #f44336;
+  padding: 0 4px;
+  width: 85%;
 }
 
 
@@ -156,10 +187,15 @@ nav ul {
 
 .card {
   backdrop-filter: blur(.2rem);
-  background-color: rgba(30, 30, 30, 0.7);
+  background-color: rgba(0, 0, 0, 0.08);
   border-radius: 1rem;
   display: grid;
   padding: 1rem;
+}
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: all .4s linear;
 }
 
 .card:hover h3 i {

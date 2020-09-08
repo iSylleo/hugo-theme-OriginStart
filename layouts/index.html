@@ -2,20 +2,52 @@
 
 {{ if .Site.Params.searchEngines }}
   <section class="search">
-    <h3>search</h3>
     <div class="searchbox">
-      {{ range .Site.Params.searchEngines }}
-        {{ if .activated }}
-          <form autocomplete="off" method="get" action="{{ .url }}">
-            <i class="{{ .icon }}"></i>
-            <input type="text" name="q">
-          </form>
+      <div id="search-list" class="hide-type-list">
+        <div class="search-group">
+          <span id="group-name"></span>
+          <div class="search-group-list">
+            {{ range .Site.Params.searchEngines }}
+              <label for="group-{{ .group }}" onclick="changeSearchGroup(this.innerText)">
+                <span class="tile-lg">
+                  <i class="{{ .icon }}"></i>
+                </span>
+                {{ .group }}
+              </label>
+            {{ end }}
+          </div> <!--search-group-list end-->
+        </div> <!--search-group end-->
+
+        {{ range .Site.Params.searchEngines }}
+          <div class="group-items" id="group-{{ .group }}">
+            <ul class="search-engines">
+              {{ range .items }}
+                {{ if .activated }}
+                  <li>
+                    <input type="radio" name="engine" id="engine-{{ .name }}" 
+                      value="{{ .url }}" hidden onchange="changeSearchEngine(this.value)">
+                    <label for="engine-{{ .name }}">
+                      <span> {{ .name }} </span>
+                    </label>
+                  </li>
+                {{ end }}
+              {{ end }}
+            </ul>
+          </div> <!--group-items end-->
         {{ end }}
-      {{ end }}
+      </div> <!--search-list end-->
+
+      <form height="50px" action="" method="get" target="_blank" id="super-search-fm" onsubmit="return doSearch()">
+        <input autocomplete="off" type="text" id="search-text" style="outline:none" autofocus="">
+        <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
+      </form>
     </div>
   </section>
 {{ end }}
 
+<div class="hitokoto">
+  <p id="hitokoto" onclick="hitokoto()"></p>
+</div>
 
 <section class="cards">
   {{ range .Site.Params.bookmarks }}
