@@ -20,4 +20,9 @@ function init() {
 
     var firstSearchGroup = document.getElementsByClassName("search-group-list")[0].firstElementChild;
     changeSearchGroup(firstSearchGroup.innerText.trim());
+
+    // TODO
+    // setInterval(function() {
+    //     document.getElementsByTagName("body")[0].style = "background: url({{ .Site.Params.background }}) top fixed no-repeat"
+    // }, 60000);
 }

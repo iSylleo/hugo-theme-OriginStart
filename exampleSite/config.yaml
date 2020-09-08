@@ -1,5 +1,6 @@
 baseURL: https://example.com
 languageCode: en-us
+hasCJKLanguage: true
 title: Your site title
 theme: freshstart
 
@@ -7,17 +8,55 @@ params:
   author: Ricardo Franzen
   description: rfranzen.com
   favicon: /favicon.ico
-
+  background: https://image.example.com/
 
   searchEngines:
-    - name: Google
-      activated: true
-      icon: fab fa-google
-      url: https://google.com/search
-    - name: DuckDuckGo
-      activated: true
+    # Please ensure the group name and the search engine name is unique.
+    - group: Default
       icon: fas fa-search
-      url: https://www.duckduckgo.com
+      items:
+        - name: Baidu
+          activated: true
+          url: https://www.baidu.com/s?wd={search}&ie=utf-8
+        - name: Google
+          activated: true
+          url: https://google.com/search
+        - name: DuckDuckGo
+          activated: true
+          url: https://www.duckduckgo.com
+        - name: Bai
+          activated: true
+          url: https://www.baidu.com/s?wd={search}&ie=utf-8
+        - name: Goog
+          activated: true
+          url: https://google.com/search
+    - group: Academic
+      icon: fas fa-search
+      items:
+        - name: Gole
+          activated: true
+          url: https://google.com/search
+        - name: DckGo
+          activated: true
+          url: https://www.duckduckgo.com
+    - group: Music
+      icon: fas fa-search
+      items:
+        - name: Gogle
+          activated: true
+          url: https://google.com/search
+        - name: ckDuckGo
+          activated: true
+          url: https://www.duckduckgo.com
+    - group: Movie
+      icon: fas fa-search
+      items:
+        - name: Googl
+          activated: true
+          url: https://google.com/search
+        - name: DucuckGo
+          activated: true
+          url: https://www.duckduckgo.com
 
 
   nav:

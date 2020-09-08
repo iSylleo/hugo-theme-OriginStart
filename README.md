@@ -1,9 +1,25 @@
 # freshStart
-A clear and responsive theme for [Hugo](//gohugo.io/) witch provides a dynamic environment to manage bookmarks in a clean and fast start page.
+> A clear and responsive theme for [Hugo](//gohugo.io/) witch provides a dynamic environment to manage bookmarks in a clean and fast start page.
 
+**Some changes are made in this branch:** 
+
+- Add background configuration in [`config.yaml`](/#Configuration), now you can use image from the Internet as your background.
+- Add [hitokoto](https://hitokoto.cn/)
+- Modify search form for supporting multiple search engines, now you can:
+  - Group search engines;
+  - Have a better look with multiple search engines.
+- Files changed:
+  - new file:   .gitignore
+  - modified:   layouts/_default/baseof.html
+  - modified:   layouts/index.html
+  - modified:   layouts/partials/head.html
+  - modified:   static/css/main.css
+  - new file:   static/css/search.css
+  - new file:   static/js/init.js
+  - new file:   static/js/search.js
 
 ## Screenshot
-![startPageColumns = false](https://raw.githubusercontent.com/rz3n/hugo-theme-freshstart/master/images/screenshot.png)
+![startPageColumns = false](./images/screenshot.png)
 
 
 ## Installation
@@ -15,28 +31,68 @@ For more information read the official [setup guide](//gohugo.io/overview/instal
 
 
 ## Configuration
-Example config.yaml:
-```
-baseURL: http://example.org/
+Example `config.yaml`:
+
+```yaml
+baseURL: https://example.com
 languageCode: en-us
+hasCJKLanguage: true
 title: Your site title
-theme: freshStart
+theme: freshstart
 
 params:
-  author: Your Name
-  description: A description of your site
+  author: Ricardo Franzen
+  description: rfranzen.com
   favicon: /favicon.ico
-
+  background: https://image.example.com/
 
   searchEngines:
-    - name: Google
-      activated: true
-      icon: fab fa-google
-      url: https://google.com/search
-    - name: DuckDuckGo
-      activated: true
+    # Please ensure the group name and the search engine name is unique.
+    - group: Default
       icon: fas fa-search
-      url: https://www.duckduckgo.com
+      items:
+        - name: Baidu
+          activated: true
+          url: https://www.baidu.com/s?wd={search}&ie=utf-8
+        - name: Google
+          activated: true
+          url: https://google.com/search
+        - name: DuckDuckGo
+          activated: true
+          url: https://www.duckduckgo.com
+        - name: Bai
+          activated: true
+          url: https://www.baidu.com/s?wd={search}&ie=utf-8
+        - name: Goog
+          activated: true
+          url: https://google.com/search
+    - group: Academic
+      icon: fas fa-search
+      items:
+        - name: Gole
+          activated: true
+          url: https://google.com/search
+        - name: DckGo
+          activated: true
+          url: https://www.duckduckgo.com
+    - group: Music
+      icon: fas fa-search
+      items:
+        - name: Gogle
+          activated: true
+          url: https://google.com/search
+        - name: ckDuckGo
+          activated: true
+          url: https://www.duckduckgo.com
+    - group: Movie
+      icon: fas fa-search
+      items:
+        - name: Googl
+          activated: true
+          url: https://google.com/search
+        - name: DucuckGo
+          activated: true
+          url: https://www.duckduckgo.com
 
 
   nav:
@@ -87,7 +143,6 @@ params:
           url: #
         - name: another site
           url: #
-
 ```
 
 ## Sources
