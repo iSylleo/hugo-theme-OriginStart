@@ -8,8 +8,8 @@
   {{ if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}" />{{ end }}
   {{ if .Site.Params.favicon }} <link rel="icon" href="{{ .Site.Params.favicon }}" /> {{ end }}
 
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/search.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/search.css" />
   
   {{ if .Site.Params.fontawesomeCDN }}
     <link rel="stylesheet" href="{{ .Site.Params.fontawesomeCDN }}" 
@@ -21,6 +21,6 @@
       crossorigin="anonymous" />
   {{ end }}
 
-  <script src="{{ .Site.BaseURL }}js/search.js"></script>
-  <script src="{{ .Site.BaseURL }}js/init.js"></script>
+  <script src="/js/search.js"></script>
+  <script src="/js/init.js"></script>
 </head>
