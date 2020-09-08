@@ -168,7 +168,8 @@ nav ul {
   border-radius: 1rem;
 }
 
-.searchbox form:hover {
+.searchbox form:hover,
+.searchbox form:focus-within {
   background-color: rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
   transition: all .4s linear;
