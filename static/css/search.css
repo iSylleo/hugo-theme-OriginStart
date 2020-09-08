@@ -136,6 +136,11 @@
     cursor: pointer;
 }
 
+.search-engines li label::first-letter {
+    color: #f44336;
+    font-weight: bold;
+}
+
 .search-engines input:hover+label span {
     color: rgb(244, 67, 54);
     transition: all .4s linear;
