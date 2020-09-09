@@ -9,8 +9,11 @@
 }
 
 body {
-  background: url(../images/bg.webp) top fixed no-repeat;
+  background-image: url(../images/bg.webp);
+  background-position: top;
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   content-visibility: auto;
   font-size: 16px;
   font-family: system-ui, sans-serif;

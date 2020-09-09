@@ -14,6 +14,7 @@
   - modified:   layouts/_default/baseof.html
   - modified:   layouts/index.html
   - modified:   layouts/partials/head.html
+  - modified:   layouts/partials/header.html
   - modified:   static/css/main.css
   - new file:   static/css/search.css
   - new file:   static/js/init.js
