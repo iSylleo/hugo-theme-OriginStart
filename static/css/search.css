@@ -27,25 +27,25 @@
     height: auto;
 }
 
-.search-group:hover .search-group-list {
-    display: block;
-}
-
 .search-group>span {
     display: block;
     height: 31px;
     line-height: 31px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     color: #f44336;
     width: 75px;
 }
 
-.search-group>span::after{
+.search-group>span::after {
     content: "\f0da";
     font-family: "Font Awesome 5 Free";
     /* font-size: 15px; */
     margin: 0 0 0 10px
+}
+
+.search-group:hover .search-group-list {
+    display: block;
 }
 
 .search-group-list {
@@ -55,12 +55,12 @@
     left: 15px;
     padding: 9pt 0;
     width: 20pc;
-    background-color: rgba(0, 0, 0, 0.6);
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(.2rem);
 }
 
-.search-group-list::before {
+/* .search-group-list::before {
     position: absolute;
     top: -1.2pc;
     left: 10px;
@@ -69,8 +69,8 @@
     width: 0;
     height: 0;
     border: 10px solid transparent;
-    border-bottom-color: rgba(0, 0, 0, 0.6)
-}
+    border-bottom-color: rgba(0, 0, 0, 0.6);
+} */
 
 .search-group-list label {
     display: block;
@@ -132,7 +132,7 @@
 
 .search-engines li label {
     display: inline-block;
-    padding: 0 11px;
+    padding: 0 6px;
     font-size: 15px;
     line-height: 31px;
     border-radius: 3px 3px 0 0;
@@ -144,17 +144,21 @@
     font-weight: bold;
 }
 
-.search-engines input:hover+label span {
+.search-engines li label span {
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+.search-engines input:hover+label span,
+.search-engines input:checked+label span {
     color: rgb(244, 67, 54);
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+    backdrop-filter: blur(.2rem);
     transition: all .4s linear;
 }
 
 .search-engines input:checked+label span {
     border-bottom: solid 2px rgb(244, 67, 54);
-    /* background-color: rgba(30, 30, 30, 0.7); */
-    box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
-    color: rgb(244, 67, 54);
 }
 
 ::-webkit-input-placeholder {
@@ -164,7 +168,7 @@
 
 
 #search-text {
-    font-size: 1pc;
+    font-size: 1.2pc;
 }
 
 #search-button {

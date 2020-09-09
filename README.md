@@ -3,11 +3,12 @@
 
 **Some changes are made in this branch:** 
 
-- Add background configuration in [`config.yaml`](/#Configuration), now you can use image from the Internet as your background.
+- Add background configuration in [`config.yaml`](#Configuration), now you can use image from the Internet as your background.
 - Add [hitokoto](https://hitokoto.cn/)
 - Modify search form for supporting multiple search engines, now you can:
   - Group search engines;
   - Have a better look with multiple search engines.
+  - Styles of search form are inspired by [geeknav](https://github.com/CrazyBoyM/geeknav).
 - Files changed:
   - new file:   .gitignore
   - modified:   layouts/_default/baseof.html
@@ -17,6 +18,7 @@
   - new file:   static/css/search.css
   - new file:   static/js/init.js
   - new file:   static/js/search.js
+  - ...
 
 ## Screenshot
 ![startPageColumns = false](./images/screenshot.png)
