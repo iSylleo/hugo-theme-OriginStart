@@ -8,32 +8,36 @@
           <span id="group-name"></span>
           <div class="search-group-list">
             {{ range .Site.Params.searchEngines }}
-              <label for="group-{{ .group }}" onclick="changeSearchGroup(this.innerText)">
-                <span class="tile-lg">
-                  <i class="{{ .icon }}"></i>
-                </span>
-                {{ .group }}
-              </label>
+              {{ if ne .enabled false }}
+                <label for="group-{{ .group }}" onclick="changeSearchGroup(this.innerText)">
+                  <span class="tile-lg">
+                    <i class="{{ .icon }}"></i>
+                  </span>
+                  {{ .group }}
+                </label>
+              {{ end }}
             {{ end }}
           </div> <!--search-group-list end-->
         </div> <!--search-group end-->
 
         {{ range .Site.Params.searchEngines }}
-          <div class="group-items" id="group-{{ .group }}">
-            <ul class="search-engines">
-              {{ range .items }}
-                {{ if ne .activated false }}
-                  <li>
-                    <input type="radio" name="engine" id="engine-{{ .name }}" 
-                      value="{{ .url }}" hidden onchange="changeSearchEngine(this.value)">
-                    <label for="engine-{{ .name }}">
-                      <span> {{ .name }} </span>
-                    </label>
-                  </li>
+          {{ if ne .enabled false }}
+            <div class="group-items" id="group-{{ .group }}">
+              <ul class="search-engines">
+                {{ range .items }}
+                  {{ if ne .activated false }}
+                    <li>
+                      <input type="radio" name="engine" id="engine-{{ .name }}" 
+                        value="{{ .url }}" hidden onchange="changeSearchEngine(this.value)">
+                      <label for="engine-{{ .name }}">
+                        <span> {{ .name }} </span>
+                      </label>
+                    </li>
+                  {{ end }}
                 {{ end }}
-              {{ end }}
-            </ul>
-          </div> <!--group-items end-->
+              </ul>
+            </div> <!--group-items end-->
+          {{ end }}
         {{ end }}
       </div> <!--search-list end-->
 
