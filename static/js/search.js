@@ -8,7 +8,7 @@ function doSearch() {
     if (searchText) {
         window.open(
             document.getElementById("super-search-fm").action.replace(
-                /{search}/g, searchText
+                /{query}/g, searchText
             ));
     }
 
