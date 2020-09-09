@@ -210,13 +210,13 @@ nav ul {
   transition: all .4s linear;
 }
 
-.card:hover h3 i {
+/* .card:hover h3 i {
   color: rgb(244, 67, 54);
   transition: all .4s linear;
-}
+} */
 
 .card h3 {
-  text-transform: lowercase;
+  text-transform: uppercase;
   text-align: center;
   margin: 0 0 0.5rem 0;
 }
@@ -232,6 +232,10 @@ nav ul {
   margin: 0.2rem;
   width: max-content;
   height: max-content;
+}
+
+.card ul li a {
+  font-size: 14px;
 }
 
 .card ul li * {

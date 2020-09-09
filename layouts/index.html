@@ -56,18 +56,22 @@
 
 <section class="cards">
   {{ range .Site.Params.bookmarks }}
-  <div class="card">
-    <h3><i class="{{ .icon }}"></i> {{ .group }} </h3>
-    <ul>
-      {{ range .items }}
-        {{ if .icon }}
-        <li><a href="{{ .url }}"><i class="{{ .icon }}"></i> {{ .name }}</a></li>
-        {{ else }}
-        <li><a href="{{ .url }}">{{ .name }}</a></li>
-        {{ end }}
-      {{ end }}
-    </ul>
-  </div>
+    {{ if ne .enabled false }}
+      <div class="card">
+        <h3><i class="{{ .icon }}"></i> {{ .group }} </h3>
+        <ul>
+          {{ range .items }}
+            {{ if ne .activated false }}
+              {{ if .icon }}
+                <li><a target="_blank" href="{{ .url }}"><i class="{{ .icon }}"></i> {{ .name }}</a></li>
+              {{ else }}
+                <li><a target="_blank" href="{{ .url }}">{{ .name }}</a></li>
+              {{ end }}
+            {{ end }}
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
   {{ end }}
 </section>
 
