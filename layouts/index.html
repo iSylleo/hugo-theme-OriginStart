@@ -63,9 +63,9 @@
           {{ range .items }}
             {{ if ne .activated false }}
               {{ if .icon }}
-                <li><a target="_blank" href="{{ .url }}"><i class="{{ .icon }}"></i> {{ .name }}</a></li>
+                <li><a target="_blank" href="{{ .url }}" title="{{ .description }}"><i class="{{ .icon }}"></i> {{ .name }}</a></li>
               {{ else }}
-                <li><a target="_blank" href="{{ .url }}">{{ .name }}</a></li>
+                <li><a target="_blank" href="{{ .url }}" title="{{ .description }}">{{ .name }}</a></li>
               {{ end }}
             {{ end }}
           {{ end }}

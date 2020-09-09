@@ -2,12 +2,9 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
   {{- partial "head.html" . -}}
   
-  {{ if .Site.Params.background }}
-    <body onload="init({{ .Site.Params.hitokoto }});"
-      style="background-image: url({{ .Site.Params.background }});">
-  {{ else }}
-    <body onload="init({{ .Site.Params.hitokoto }});">
-  {{ end }}
+  <body onload="init({{ .Site.Params.hitokoto }});" 
+  {{ if .Site.Params.background }} style="background-image: url({{ .Site.Params.background }});"{{end}} >
+ 
     
     {{- partial "header.html" . -}}
   
