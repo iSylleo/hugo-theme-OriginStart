@@ -22,7 +22,7 @@
           <div class="group-items" id="group-{{ .group }}">
             <ul class="search-engines">
               {{ range .items }}
-                {{ if .activated }}
+                {{ if ne .activated false }}
                   <li>
                     <input type="radio" name="engine" id="engine-{{ .name }}" 
                       value="{{ .url }}" hidden onchange="changeSearchEngine(this.value)">
