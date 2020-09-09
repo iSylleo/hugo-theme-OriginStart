@@ -64,7 +64,7 @@ params:
       items:
         - name: Baidu
           activated: true
-          url: https://www.baidu.com/s?wd={search}&ie=utf-8
+          url: https://www.baidu.com/s?wd={query}&ie=utf-8
         - name: Google
           activated: true
           url: https://google.com/search
@@ -73,7 +73,7 @@ params:
           url: https://www.duckduckgo.com
         - name: Bai
           activated: true
-          url: https://www.baidu.com/s?wd={search}&ie=utf-8
+          url: https://www.baidu.com/s?wd={query}&ie=utf-8
         - name: Goog
           activated: true
           url: https://google.com/search
