@@ -264,7 +264,6 @@ nav ul {
 .card:hover {
   background-color: rgba(0, 0, 0, 0.6);
   transition: all .4s linear;
-  z-index: 13;
 }
 
 /* .card:hover h3 i {
@@ -311,25 +310,19 @@ nav ul {
   font-weight: bold;
 }
 
-.nav-left ul li .tooltip,
-.card ul li .tooltip {
-  display: none;
-  padding: 5px 8px;
-  font-size: 13px;
-  color: rgb(200, 200, 200);
-  position: relative;
-  top: 18px;
+#tooltip {
+  visibility: hidden;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  max-width: 35%;
+  line-break: auto;
+  padding: 5px;
+  border-radius: 0 10px 0 10px;
   background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
-  border-radius: 0 8px 0 8px;
+  box-shadow: 0 0 5px rgb(244, 67, 54);
 }
 
-.nav-left ul li .tooltip {
-  position: absolute;
-  top: 31px;
-}
-
-.nav-left ul li:hover .tooltip,
-.card ul li:hover .tooltip {
+#tooltip p {
   display: inline;
 }

@@ -1,3 +1,5 @@
+var hitokoto_timer;
+
 function hitokoto(hiType) {
     if (hitokoto_timer) {
         clearTimeout(hitokoto_timer);
@@ -16,7 +18,6 @@ function hitokoto(hiType) {
     }, 256);
 }
 
-var hitokoto_timer;
 
 function init(hiType) {
     hitokoto(hiType);
@@ -29,4 +30,15 @@ function init(hiType) {
     // setInterval(function() {
     //     document.getElementsByTagName("body")[0].style = "background: url({{ .Site.Params.background }}) top fixed no-repeat"
     // }, 60000);
+}
+
+function showTooltip(link) {
+    if (link.getAttribute("tooltip-text")) {
+        document.getElementById("tooltiptext").innerText = link.getAttribute("tooltip-text");
+        document.getElementById("tooltip").style.visibility = "visible";
+    }
+}
+
+function hideTooltip() {
+    document.getElementById("tooltip").style.visibility = "hidden";
 }

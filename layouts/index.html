@@ -50,8 +50,8 @@
 {{ end }}
 
 <div class="hitokoto" onclick="hitokoto()">
-  <p id="hitokoto"></p>
-  <p id="hitokoto-from"></p>
+  <p id="hitokoto"><i class="fas fa-spinner red"></i></i></p>
+  <p id="hitokoto-from"><i class="fas fa-spinner red"></i></p>
 </div>
 
 <section class="cards">
@@ -63,16 +63,11 @@
           {{ range .items }}
             {{ if ne .activated false }}
               <li>
-                <a onclick="window.open({{ .url }}, '_blank');" one-link-mark="yes" rel="nofollow" >
+                <a onclick="window.open({{ .url }}, '_blank');" one-link-mark="yes" rel="nofollow" 
+                  tooltip-text="{{ .description }}" onmouseover="showTooltip(this);" onmouseout="hideTooltip();">
                   {{ if .icon }} <i class="{{ .icon }}"></i> {{ end }}
                   {{ .name }}
                 </a>
-                {{ if .description }}
-                  <span class="tooltip">
-                    <i class="far fa-hand-point-right"></i>
-                    {{ .description }}
-                  </span>
-                {{ end }}
               </li>
             {{ end }}
           {{ end }}
@@ -81,5 +76,10 @@
     {{ end }}
   {{ end }}
 </section>
+
+<div id="tooltip">
+  <i class="far fa-hand-point-right red"></i>
+  <p id="tooltiptext">tooltip</p>
+</div>
 
 {{ end }}

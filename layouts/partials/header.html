@@ -5,8 +5,8 @@
       <ul>
         {{ range .Site.Params.nav }}
           <li>
-            <a onclick="window.open({{ .url }}, '_blank')"><i class="{{ .icon }}"></i></a>
-            <span class="tooltip"> {{ .name }} </span>
+            <a onclick="window.open({{ .url }}, '_blank')" tooltip-text="{{ .name }}" onmouseover="showTooltip(this);"
+              onmouseout="hideTooltip();"><i class="{{ .icon }}"></i></a>
           </li>
         {{ end }}
       </ul>
