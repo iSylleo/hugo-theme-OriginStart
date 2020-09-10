@@ -62,11 +62,18 @@
         <ul>
           {{ range .items }}
             {{ if ne .activated false }}
-              {{ if .icon }}
-                <li><a target="_blank" href="{{ .url }}" title="{{ .description }}"><i class="{{ .icon }}"></i> {{ .name }}</a></li>
-              {{ else }}
-                <li><a target="_blank" href="{{ .url }}" title="{{ .description }}">{{ .name }}</a></li>
-              {{ end }}
+              <li>
+                <a target="_blank" href="{{ .url }}" >
+                  {{ if .icon }} <i class="{{ .icon }}"></i> {{ end }}
+                  {{ .name }}
+                </a>
+                {{ if .description }}
+                  <span class="tooltip">
+                    <i class="far fa-hand-point-right"></i>
+                    {{ .description }}
+                  </span>
+                {{ end }}
+              </li>
             {{ end }}
           {{ end }}
         </ul>

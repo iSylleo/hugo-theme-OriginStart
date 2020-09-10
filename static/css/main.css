@@ -211,6 +211,7 @@ nav ul {
 .card:hover {
   background-color: rgba(0, 0, 0, 0.6);
   transition: all .4s linear;
+  z-index: 13;
 }
 
 /* .card:hover h3 i {
@@ -238,7 +239,7 @@ nav ul {
 }
 
 .card ul li a {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .card ul li * {
@@ -254,4 +255,20 @@ nav ul {
 .card ul li i {
   color: #f44336;
   font-weight: bold;
+}
+
+.card ul li .tooltip {
+  display: none;
+  padding: 5px 8px;
+  font-size: 13px;
+  color: rgb(200, 200, 200);
+  position: relative;
+  top: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
+  border-radius: 0 8px 0 8px;
+}
+
+.card ul li:hover .tooltip {
+  display: inline;
 }
