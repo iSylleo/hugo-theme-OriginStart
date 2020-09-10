@@ -63,7 +63,7 @@
           {{ range .items }}
             {{ if ne .activated false }}
               <li>
-                <a target="_blank" href="{{ .url }}" >
+                <a onclick="window.open({{ .url }}, '_blank');" one-link-mark="yes" rel="nofollow" >
                   {{ if .icon }} <i class="{{ .icon }}"></i> {{ end }}
                   {{ .name }}
                 </a>

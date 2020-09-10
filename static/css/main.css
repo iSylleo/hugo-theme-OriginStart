@@ -116,6 +116,10 @@ nav ul {
   margin: 0.1rem 0;
 }
 
+.nav-left ul li:hover {
+  cursor: pointer;
+}
+
 .nav-left { margin-right: auto; }
 .nav-left ul li { padding: 0 0.3rem; }
 .nav-right ul li { padding: 0 0.6rem; }
@@ -249,6 +253,7 @@ nav ul {
 
 .card ul li:hover * {
   color: #f44336;
+  cursor: pointer;
 }
 
 .card ul li::first-letter,
@@ -257,18 +262,25 @@ nav ul {
   font-weight: bold;
 }
 
+.nav-left ul li .tooltip,
 .card ul li .tooltip {
   display: none;
   padding: 5px 8px;
   font-size: 13px;
   color: rgb(200, 200, 200);
   position: relative;
-  top: 15px;
+  top: 18px;
   background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
   border-radius: 0 8px 0 8px;
 }
 
+.nav-left ul li .tooltip {
+  position: absolute;
+  top: 31px;
+}
+
+.nav-left ul li:hover .tooltip,
 .card ul li:hover .tooltip {
   display: inline;
 }

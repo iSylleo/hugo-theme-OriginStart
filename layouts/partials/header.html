@@ -4,7 +4,10 @@
     <div class="nav-left">
       <ul>
         {{ range .Site.Params.nav }}
-        <li><a target="_blank" href="{{ .url }}" title="{{ .name }}"><i class="{{ .icon }}"></i></a></li>
+          <li>
+            <a onclick="window.open({{ .url }}, '_blank')"><i class="{{ .icon }}"></i></a>
+            <span class="tooltip"> {{ .name }} </span>
+          </li>
         {{ end }}
       </ul>
     </div>

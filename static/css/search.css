@@ -137,7 +137,7 @@
 
 .search-engines li label span {
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 .search-engines input:hover+label span,
