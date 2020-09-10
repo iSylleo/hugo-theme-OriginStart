@@ -201,25 +201,6 @@
     }
 }
 
-@media screen and (max-width:767px) {
-    .group-items {
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-
-    .search-engines {
-        white-space: nowrap;
-        overflow: scroll
-    }
-    
-    .search-list {
-        height: 30px;
-        overflow-y: hidden;
-        overflow-x: scroll;
-        white-space: nowrap
-    }
-}
-
 @media screen and (max-width:768px) {
     .group-items {
         overflow-x: auto;
