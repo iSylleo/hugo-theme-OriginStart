@@ -11,6 +11,10 @@
     <main>
       {{- block "main" . }}{{- end }}
     </main>
+
+    <div id="back2top-btn" onclick="smoothScrollToTop();">
+      <i class="fas fa-rocket red"></i>
+    </div>
   
     {{- partial "footer.html" . -}}
   </body>

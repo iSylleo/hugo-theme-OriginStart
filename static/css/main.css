@@ -150,65 +150,20 @@ nav ul {
 }
 
 /* --------------------------
- * search
-*/
-.search {
-  /* backdrop-filter: blur(.1rem); */
-  /* background-color: rgba(30, 30, 30, 0.7); */
-  /* border-radius: 1.2rem; */
-  margin: 2rem auto;
-  padding: 0.5rem 0;
-  text-align: center;
-  /* width: 60vw; */
-  max-width: 60%;
-}
-.searchbox {
-  display: flex;
-  flex-direction: column;
-}
-.searchbox form {
-  /* padding: 1rem 0 0 0; */
-  position: relative;
-  border-radius: 1rem;
-}
-
-.searchbox form:hover,
-.searchbox form:focus-within {
-  backdrop-filter: blur(.2rem);
-  box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
-  transition: all .4s linear;
-}
-
-.searchbox input {
-  background: none;
-  border: 0;
-  border-bottom: solid 3px rgb(244, 67, 54);
-  height: 36px;
-  line-height: 36px;
-  font-size: 1.2pc;
-  color: #f44336;
-  padding: 0 4px;
-  width: 85%;
-}
-
-
-/* --------------------------
  * cards
 */
 .cards {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
-  margin: 0 2rem 2rem 2rem;
+  max-width: 90%;
+  margin: 0 auto 2rem auto;
   place-items: top;
 }
 
 @media screen and (min-width: 1440px) {
   .cards {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    max-width: 60%;
-    position: relative;
-    left: 20%;
   }
 }
 
@@ -310,6 +265,9 @@ nav ul {
   font-weight: bold;
 }
 
+/* --------------------------
+ * tooltip
+*/
 #tooltip {
   visibility: hidden;
   position: fixed;
@@ -319,11 +277,37 @@ nav ul {
   line-break: auto;
   padding: 5px;
   border-radius: 0 10px 0 10px;
-  backdrop-filter: blur(.2rem);
-  /* background: rgba(0, 0, 0, 0.6); */
+  background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 5px rgb(244, 67, 54);
 }
 
 #tooltip p {
   display: inline;
+}
+
+/* --------------------------
+ * back-to-top button
+*/
+
+#back2top-btn {
+  /* visibility: hidden; */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  position: fixed;
+  bottom: 2rem;
+  right: -3rem;
+  /* z-index: 13; */
+  text-align: center;
+  transition: all .3s linear;
+}
+
+#back2top-btn:hover {
+  cursor: pointer;
+  transform: rotate(-45deg);
+  transition: all .3s linear;
 }

@@ -18,18 +18,18 @@ function hitokoto(hiType) {
     }, 256);
 }
 
-
-function init(hiType) {
-    hitokoto(hiType);
-    setInterval(hitokoto, 300000, hiType);
-
-    var firstSearchGroup = document.getElementsByClassName("search-group-list")[0].firstElementChild;
-    changeSearchGroup(firstSearchGroup.innerText.trim());
-
-    // TODO
-    // setInterval(function() {
-    //     document.getElementsByTagName("body")[0].style = "background: url({{ .Site.Params.background }}) top fixed no-repeat"
-    // }, 60000);
+/**
+ * This function is from: https: //zhuanlan.zhihu.com/p/97342844
+ * Thanks for the autor's share.
+ */
+function smoothScrollToTop() {
+    let Y_TopValve = (window.pageYOffset || document.body.scrollTop || document.documentElement.scrollTop);
+    if (Y_TopValve > 1) {
+        window.requestAnimationFrame(smoothScrollToTop);
+        scrollTo(0, Math.floor(Y_TopValve * 0.85));
+    } else {
+        scrollTo(0, 0);
+    }
 }
 
 function showTooltip(link) {
@@ -41,4 +41,23 @@ function showTooltip(link) {
 
 function hideTooltip() {
     document.getElementById("tooltip").style.visibility = "hidden";
+}
+
+function init(hiType) {
+    hitokoto(hiType);
+    setInterval(hitokoto, 300000, hiType);
+
+    var firstSearchGroup = document.getElementsByClassName("search-group-list")[0].firstElementChild;
+    changeSearchGroup(firstSearchGroup.innerText.trim());
+
+    window.onscroll = () => {
+        if (document.documentElement.scrollTop > window.innerHeight) {
+            // document.getElementById("back2top-btn").style.visibility = "visible";
+            document.getElementById("back2top-btn").style.right = "1rem";
+        }
+        else {
+            // document.getElementById("back2top-btn").style.visibility = "hidden";
+            document.getElementById("back2top-btn").style.right = "-3rem";
+        }
+    };
 }
