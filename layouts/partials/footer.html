@@ -20,6 +20,39 @@
 }
 </script>
 
+{{ if .Site.Params.Heweather }}
+<script>
+  /**
+   * Heweather plugin
+   * Thanks the Heweather for supplying this free api
+   * https://www.heweather.com/
+   * https://dev.heweather.com/
+   */
+  WIDGET = {
+    CONFIG: {
+      "modules": "02",
+      "background":5,
+      "tmpColor": "rgb(200, 200, 200)",
+      "tmpSize": "0.7rem",
+      "cityColor": "rgb(200, 200, 200)",
+      "citySize": 16,
+      "aqiSize": 16,
+      "weatherIconSize": "0.7rem",
+      "alertIconSize": 18,
+      "padding": "0px 0px 0px 0px",
+      "shadow": "0",
+      "language": "auto",
+      "borderRadius": "5",
+      "fixed": "false",
+      "vertical": "center",
+      "horizontal": "center",
+      "key": "{{ .Site.Params.Heweather }}"
+    }
+  }
+</script>
+<script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+{{ end }}
+
 <!--
 <footer>
 
