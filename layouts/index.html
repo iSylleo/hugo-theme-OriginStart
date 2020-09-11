@@ -28,7 +28,7 @@
                   {{ if ne .activated false }}
                     <li>
                       <input type="radio" name="engine" id="engine-{{ .name }}" 
-                        value="{{ .url }}" hidden onchange="changeSearchEngine(this.value)">
+                        value="{{ .url | safeURL }}" hidden onchange="changeSearchEngine(this.value)">
                       <label for="engine-{{ .name }}">
                         <span> {{ .name }} </span>
                       </label>
@@ -63,7 +63,7 @@
           {{ range .items }}
             {{ if ne .activated false }}
               <li>
-                <a onclick="window.open({{ .url }}, '_blank');" one-link-mark="yes" rel="nofollow" 
+                <a onclick="window.open({{ .url | safeURL }}, '_blank');" one-link-mark="yes" rel="nofollow" 
                   tooltip-text="{{ .description }}" onmouseover="showTooltip(this);" onmouseout="hideTooltip();">
                   {{ if .icon }} <i class="{{ .icon }}"></i> {{ end }}
                   {{ .name }}

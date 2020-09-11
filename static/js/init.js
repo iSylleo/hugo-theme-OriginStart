@@ -51,7 +51,16 @@ function init(hiType) {
     changeSearchGroup(firstSearchGroup.innerText.trim());
 
     window.onscroll = () => {
-        if (document.documentElement.scrollTop > window.innerHeight) {
+        var st = document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (st > 15) {
+          document.querySelector("header").classList.add("blur");
+        }
+        else {
+          document.querySelector("header").classList.remove("blur");
+        }
+
+        if (st > window.innerHeight) {
             // document.getElementById("back2top-btn").style.visibility = "visible";
             document.getElementById("back2top-btn").style.right = "1rem";
         }

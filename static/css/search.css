@@ -14,13 +14,9 @@
  * search
 */
 .search {
-    /* backdrop-filter: blur(.1rem); */
-    /* background-color: rgba(30, 30, 30, 0.7); */
-    /* border-radius: 1.2rem; */
     margin: 2rem auto;
     padding: 0.5rem 0;
     text-align: center;
-    /* width: 60vw; */
     max-width: 60%;
 }
 
@@ -33,13 +29,13 @@
     /* padding: 1rem 0 0 0; */
     position: relative;
     border-radius: 1rem;
+    transition: all .3s linear;
 }
 
 .searchbox form:hover,
 .searchbox form:focus-within {
     backdrop-filter: blur(.2rem);
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
-    transition: all .4s linear;
 }
 
 .searchbox input {
@@ -118,13 +114,13 @@
     text-align: center;
     width: 33%;
     float: left;
+    transition: all .3s linear;
 }
 
 .search-group-list label:hover {
     color: #f44336;
     cursor: pointer;
     transform: scale(1.15);
-    transition: all .4s linear;
 }
 
 .search-group-list .tile-lg {
@@ -180,8 +176,9 @@
 }
 
 .search-engines li label span {
-    padding: 5px;
-    border-radius: 6px;
+  padding: 5px;
+  border-radius: 6px;
+  transition: all .2s linear;
 }
 
 .search-engines input:hover+label span,
@@ -189,7 +186,6 @@
     color: rgb(244, 67, 54);
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
     backdrop-filter: blur(.2rem);
-    transition: all .4s linear;
 }
 
 .search-engines input:checked+label span {

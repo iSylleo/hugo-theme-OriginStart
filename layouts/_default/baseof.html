@@ -2,10 +2,7 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
   {{- partial "head.html" . -}}
   
-  <body onload="init({{ .Site.Params.hitokoto }});" 
-  {{ if .Site.Params.background }} style="background-image: url({{ .Site.Params.background }});"{{end}} >
- 
-    
+  <body>
     {{- partial "header.html" . -}}
   
     <main>

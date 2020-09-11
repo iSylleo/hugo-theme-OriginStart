@@ -1,4 +1,10 @@
 <style type="text/css">
+  {{ if .Site.Params.background }}
+  body {
+    background-image: url({{ .Site.Params.background | safeURL }});
+  }
+  {{ end }}
+
   {{ if .Site.Params.themeColor }}
 
   .u-theme-f, 
@@ -21,10 +27,6 @@
 
   #search-button {
     background-color: {{ .Site.Params.themeColor | safeCSS }};
-  }
-
-  .hitokoto:hover {
-    text-decoration-color: {{ .Site.Params.themeColor | safeCSS }};
   }
 
   #tooltip {

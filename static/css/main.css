@@ -62,12 +62,16 @@ h3 {
 header {
   font-size: 1rem;
   padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 13;
+  transition: all .3s linear;
 }
 
+.blur,
 header:hover {
   backdrop-filter: blur(.2rem);
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
-  transition: all .4s linear;
 }
 
 nav {
@@ -101,11 +105,17 @@ nav ul {
   margin: 0 auto;
   margin-bottom: 2rem;
   text-align: center;
+  text-emphasis: open currentcolor;
+  -webkit-text-emphasis: open currentcolor;
+  text-emphasis-position: under right;
+  -webkit-text-emphasis-position: under right;
+  text-decoration: none;
 }
 
 .hitokoto:hover {
   cursor: pointer;
-  text-decoration: underline #f44336 dotted 2px;
+  text-emphasis: circle currentcolor;
+  -webkit-text-emphasis: circle currentcolor;
 }
 
 #hitokoto, #hitokoto-from {
@@ -159,6 +169,7 @@ nav ul {
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: none;
+  transition: all .4s linear;
 }
 
 .card::-webkit-scrollbar {
@@ -186,13 +197,7 @@ nav ul {
 
 .card:hover {
   background-color: rgba(0, 0, 0, 0.6);
-  transition: all .4s linear;
 }
-
-/* .card:hover h3 i {
-  color: rgb(244, 67, 54);
-  transition: all .4s linear;
-} */
 
 .card h3 {
   text-transform: uppercase;
@@ -271,7 +276,7 @@ nav ul {
   right: -3rem;
   /* z-index: 13; */
   text-align: center;
-  transition: all .3s linear;
+  transition: all .4s linear;
 }
 
 #back2top-btn:hover {

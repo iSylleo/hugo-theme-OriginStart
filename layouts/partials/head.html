@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/css/color.css" />
   
   {{ if .Site.Params.fontawesomeCDN }}
-    <link rel="stylesheet" href="{{ .Site.Params.fontawesomeCDN }}" 
+    <link rel="stylesheet" href="{{ .Site.Params.fontawesomeCDN | safeURL }}" 
       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" 
       crossorigin="anonymous" />
   {{ else }}
@@ -24,6 +24,15 @@
 
   <script src="/js/search.js"></script>
   <script src="/js/init.js"></script>
+  <script>
+    // window.onload = () => {
+    //   init({{ .Site.Params.hitokoto }});
+    // }
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      init({{ .Site.Params.hitokoto }});
+    });
+  </script>
 
   {{- partial "style.html" . -}}
 
