@@ -1,0 +1,34 @@
+
+/* --------------------------
+ * colors
+*/
+.amber        { color: rgb(255, 193, 7) !important; }
+.aqua         { color: rgb(0, 255, 255) !important; }
+.black        { color: rgb(0, 0, 0) !important; }
+.blue         { color: rgb(33, 150, 243) !important; }
+.blue-grey    { color: rgb(96, 125, 139) !important; }
+.brown        { color: rgb(121, 85, 72) !important; }
+.cyan         { color: rgb(0, 188, 212) !important; }
+.dark-grey    { color: rgb(97, 97, 97) !important; }
+.deep-orange  { color: rgb(255, 87, 34) !important; }
+.deep-purple  { color: rgb(103, 58, 183) !important; }
+.green        { color: rgb(76, 175, 80) !important; }
+.grey         { color: rgb(158, 158, 158) !important; }
+.indigo       { color: rgb(63, 81, 181) !important; }
+.khaki        { color: rgb(240, 230, 140) !important; }
+.light-blue   { color: rgb(135, 206, 235) !important; }
+.light-green  { color: rgb(139, 195, 74) !important; }
+.light-grey   { color: rgb(241, 241, 241) !important; }
+.lime         { color: rgb(205, 220, 57) !important; }
+.orange       { color: rgb(255, 152, 0) !important; }
+.pale-blue    { color: rgb(221, 255, 255) !important; }
+.pale-green   { color: rgb(221, 255, 221) !important; }
+.pale-red     { color: rgb(255, 221, 221) !important; }
+.pale-yellow  { color: rgb(255, 255, 204) !important; }
+.pink         { color: rgb(233, 30, 99) !important; }
+.purple       { color: rgb(156, 39, 176) !important; }
+.red          { color: rgb(244, 67, 54) !important; }
+.sand         { color: rgb(253, 245, 230) !important; }
+.teal         { color: rgb(0, 150, 136) !important; }
+.white        { color: rgb(255, 255, 255) !important; }
+.yellow       { color: rgb(255, 235, 59) !important; }

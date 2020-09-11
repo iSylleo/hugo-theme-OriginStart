@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="/css/main.css" />
   <link rel="stylesheet" href="/css/search.css" />
+  <link rel="stylesheet" href="/css/color.css" />
   
   {{ if .Site.Params.fontawesomeCDN }}
     <link rel="stylesheet" href="{{ .Site.Params.fontawesomeCDN }}" 
@@ -23,5 +24,7 @@
 
   <script src="/js/search.js"></script>
   <script src="/js/init.js"></script>
+
+  {{- partial "style.html" . -}}
 
 </head>

@@ -1,0 +1,36 @@
+<style type="text/css">
+  {{ if .Site.Params.themeColor }}
+
+  .u-theme-f, 
+  .search-group>span, 
+  .search-group-list label:hover, 
+  .search-engines li label::first-letter, 
+  .search-engines input:hover+label span, 
+  .search-engines input:checked+label span, 
+  .searchbox input, 
+  #hitokoto, #hitokoto-from, 
+  .card ul li:hover *, 
+  .card ul li::first-letter, .card ul li i {
+    color: {{ .Site.Params.themeColor | safeCSS }};
+  }
+
+  .search-engines input:checked+label span, 
+  .searchbox input {
+    border-bottom-color: {{ .Site.Params.themeColor | safeCSS }};
+  }
+
+  #search-button {
+    background-color: {{ .Site.Params.themeColor | safeCSS }};
+  }
+
+  .hitokoto:hover {
+    text-decoration-color: {{ .Site.Params.themeColor | safeCSS }};
+  }
+
+  #tooltip {
+    box-shadow: 0 0 5px {{ .Site.Params.themeColor | safeCSS }};;
+  }
+
+  {{ end }}
+
+</style>
