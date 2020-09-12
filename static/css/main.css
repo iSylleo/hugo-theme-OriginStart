@@ -275,3 +275,16 @@ nav ul {
   transform: rotate(-45deg);
   transition: all .3s linear;
 }
+
+footer {
+  margin: 1rem 0;
+}
+
+.footer-line {
+  /* color: rgba(30, 30, 30, 1.0); */
+  width: 100%;
+  text-align: center;
+  font-size: .6rem;
+  overflow-wrap: break-word;
+  padding: 0 0 3px 0;
+}

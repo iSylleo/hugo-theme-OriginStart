@@ -1,63 +1,65 @@
 <style type="text/css">
   {{ if .Site.Params.background }}
-  body {
-    background-image: url({{ .Site.Params.background | safeURL }});
-  }
+    {{ with .Site.Params.background }}
+      body {
+        background-image: url({{ . | safeURL }});
+      }
+    {{ end }}
   {{ end }}
 
   {{ if .Site.Params.themeColor }}
+    {{ with .Site.Params.themeColor }}
+      .u-theme-f, 
+      .search-group>span, 
+      .search-group-list label:hover, 
+      .search-engines li label::first-letter, 
+      .search-engines input:hover+label span, 
+      .search-engines input:checked+label span, 
+      .searchbox input, 
+      #hitokoto, #hitokoto-from, 
+      .card ul li:hover *, 
+      .card ul li::first-letter, .card ul li i {
+        color: {{ . | safeCSS }};
+      }
 
-  .u-theme-f, 
-  .search-group>span, 
-  .search-group-list label:hover, 
-  .search-engines li label::first-letter, 
-  .search-engines input:hover+label span, 
-  .search-engines input:checked+label span, 
-  .searchbox input, 
-  #hitokoto, #hitokoto-from, 
-  .card ul li:hover *, 
-  .card ul li::first-letter, .card ul li i {
-    color: {{ .Site.Params.themeColor | safeCSS }};
-  }
+      .search-engines input:checked+label span, 
+      .searchbox input {
+        border-bottom-color: {{ . | safeCSS }};
+      }
 
-  .search-engines input:checked+label span, 
-  .searchbox input {
-    border-bottom-color: {{ .Site.Params.themeColor | safeCSS }};
-  }
+      #search-button {
+        background-color: {{ . | safeCSS }};
+      }
 
-  #search-button {
-    background-color: {{ .Site.Params.themeColor | safeCSS }};
-  }
-
-  #tooltip {
-    box-shadow: 0 0 5px {{ .Site.Params.themeColor | safeCSS }};;
-  }
-
+      #tooltip {
+        box-shadow: 0 0 5px {{ . | safeCSS }};;
+      }
+    {{ end }}
   {{ end }}
 
   {{ if .Site.Params.useBlur }}
-  .blur, header:hover, .card, 
-  .searchbox form:hover, 
-  .searchbox form:focus-within, 
-  .search-group-list, 
-  .search-engines input:hover+label span,
-  .search-engines input:checked+label span {
-    backdrop-filter: blur(.2rem);
-    box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
-  }
+    .blur, header:hover, .card, 
+    .searchbox form:hover, 
+    .searchbox form:focus-within, 
+    .search-group-list, 
+    .search-engines input:hover+label span,
+    .search-engines input:checked+label span {
+      backdrop-filter: blur(.2rem);
+      box-shadow: 0 0 10px rgb(0, 0, 0, 0.3);
+    }
   {{ else }}
-  .card {
-    background-color: rgba(0, 0, 0, 0.08);
-  }
+    .card {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
 
-  .blur, header:hover, 
-  .search-group-list, 
-  .searchbox form:hover, 
-  .searchbox form:focus-within, 
-  .search-engines input:hover+label span,
-  .search-engines input:checked+label span {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
+    .blur, header:hover, 
+    .search-group-list, 
+    .searchbox form:hover, 
+    .searchbox form:focus-within, 
+    .search-engines input:hover+label span,
+    .search-engines input:checked+label span {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
   {{ end }}
 
 </style>
