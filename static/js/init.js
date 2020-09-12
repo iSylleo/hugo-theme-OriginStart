@@ -1,19 +1,30 @@
-var hitokoto_timer;
+var poetry_timer;
 
-function hitokoto(hiType) {
-    if (hitokoto_timer) {
-        clearTimeout(hitokoto_timer);
+function getPoetry(api, hiType) {
+    if (poetry_timer) {
+        clearTimeout(poetry_timer);
     }
 
-    hitokoto_timer = setTimeout(function () {
-        fetch('https://v1.hitokoto.cn?encode=json&charset=utf-8&' + hiType)
+    const p = document.getElementById("poetry");
+    const pf = document.getElementById("poetry-from");
+
+    if (api.trim().toLowerCase() === "jinrishici") {
+        jinrishici.load(result => {
+            p.innerText = result.data.content;
+            pf.innerText = "—— "
+                         + result.data.origin.author
+                         + "【" + result.data.origin.dynasty + "】"
+                         + " ·《" + result.data.origin.title + "》";
+        });
+        return;
+    }
+    
+    poetry_timer = setTimeout(function () {
+        fetch("https://v1.hitokoto.cn?encode=json&charset=utf-8&".concat(hiType))
         .then(response => response.json())
         .then(data => {
-            const hi = document.getElementById("hitokoto");
-            hi.innerText = data.hitokoto;
-
-            const hi_from = document.getElementById("hitokoto-from");
-            hi_from.innerText = "—— " + data.from_who + " ·《"+ data.from + "》";
+            p.innerText = data.hitokoto;
+            pf.innerText = "—— " + data.from_who + " ·《"+ data.from + "》";
         })
     }, 256);
 }
@@ -47,15 +58,19 @@ function hideTooltip() {
 
 /**
  * Do some inits when dom loaded
- * @param {string} hiType Type of hitokoto: https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%82%E6%95%B0%EF%BC%89
  */
-function init(hiType) {
+function init() {
     if (window.location != window.parent.location) {
         window.parent.location = window.location;
     }
 
-    hitokoto(hiType);
-    setInterval(hitokoto, 300000, hiType);
+    var p = document.querySelector(".poetry");
+    if (p) {
+        p.dispatchEvent(new Event("click"));
+        setInterval(() => {
+            document.querySelector(".poetry").dispatchEvent(new Event("click"));
+        }, 600000);
+    }
 
     var firstSearchGroup = document.getElementsByClassName("search-group-list")[0].firstElementChild;
     changeSearchGroup(firstSearchGroup.innerText.trim());

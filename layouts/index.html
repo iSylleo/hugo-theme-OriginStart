@@ -57,14 +57,26 @@
 {{ end }}
 {{/*  search ends  */}}
 
-{{/*  hitokoto  */}}
-{{ if ne .Site.Params.hitokoto false }}
-  <div class="hitokoto" onclick="hitokoto()">
-    <p id="hitokoto"><i class="fas fa-spinner u-theme-f"></i></i></p>
-    <p id="hitokoto-from"><i class="fas fa-spinner u-theme-f"></i></p>
-  </div>
+{{/*  poetry  */}}
+{{ if ne .Site.Params.poetry.enabled false }}
+  {{ with .Site.Params.poetry }}
+    {{ if eq .api "jinrishici" }}
+    {{/*  Thanks jinrishici (https://www.jinrishici.com/) for supplying this api */}}
+      <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+      <div class="poetry" onclick="getPoetry('{{ .api }}', '')">
+        <p id="poetry"><i class="fas fa-spinner u-theme-f"></i></p>
+        <p id="poetry-from"><i class="fas fa-spinner u-theme-f"></i></p>
+      </div>
+    {{ else }}
+    {{/* Thanks hitokoto (https://hitokoto.cn/) for supplying this api */}}
+      <div class="poetry" onclick="getPoetry('hitokoto', '{{ .hitokoto }}')">
+        <p id="poetry"><i class="fas fa-spinner u-theme-f"></i></p>
+        <p id="poetry-from"><i class="fas fa-spinner u-theme-f"></i></p>
+      </div>
+    {{ end }}
+  {{ end }}
 {{ end }}
-{{/*  hitokoto ends  */}}
+{{/*  poetry ends  */}}
 
 {{/*  bookmark cards  */}}
 <section class="cards">
@@ -80,7 +92,7 @@
                 <a onclick="window.open({{ .url | safeURL }}, '_blank');" one-link-mark="yes" rel="nofollow" 
                   tooltip-text="{{ .description }}" onmouseover="showTooltip(this);" onmouseout="hideTooltip();">
                   {{ if .icon }} <i class="{{ .icon }}"></i> {{ end }}
-                  {{ .name }}
+                  {{- .name -}}
                 </a>
               </li>
             {{ end }}

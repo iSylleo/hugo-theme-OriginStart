@@ -91,10 +91,10 @@ nav ul {
 .nav-right ul li { padding: 0 0.6rem; }
 
 /* --------------------------
- * hitokoto
+ * poetry
 */
 
-.hitokoto {
+.poetry {
   max-width: 717px;
   margin: 0 auto;
   margin-bottom: 2rem;
@@ -106,17 +106,17 @@ nav ul {
   text-decoration: none;
 }
 
-.hitokoto:hover {
+.poetry:hover {
   cursor: pointer;
   text-emphasis: circle currentcolor;
   -webkit-text-emphasis: circle currentcolor;
 }
 
-#hitokoto, #hitokoto-from {
+#poetry, #poetry-from {
   color:#f44336;
 }
 
-#hitokoto-from {
+#poetry-from {
   text-align: right;
   margin-top: 1vh;
 }
