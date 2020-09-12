@@ -49,10 +49,12 @@
   </section>
 {{ end }}
 
-<div class="hitokoto" onclick="hitokoto()">
-  <p id="hitokoto"><i class="fas fa-spinner u-theme-f"></i></i></p>
-  <p id="hitokoto-from"><i class="fas fa-spinner u-theme-f"></i></p>
-</div>
+{{ if ne .Site.Params.hitokoto false }}
+  <div class="hitokoto" onclick="hitokoto()">
+    <p id="hitokoto"><i class="fas fa-spinner u-theme-f"></i></i></p>
+    <p id="hitokoto-from"><i class="fas fa-spinner u-theme-f"></i></p>
+  </div>
+{{ end }}
 
 <section class="cards">
   {{ range .Site.Params.bookmarks }}

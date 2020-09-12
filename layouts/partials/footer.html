@@ -1,59 +1,3 @@
-<script>
-  var timer = setInterval(function() {
-    localTimer();
-  }, 1000);
-
-  function addZero(i) {
-    if (i < 10) {
-      i = "0" + i;
-    }
-    return i;
-  }
-
-  function localTimer() {
-    var today = new Date();
-    var time = addZero(today.getHours()) + ":" + addZero(today.getMinutes()) + ":" + addZero(today.getSeconds());
-    document.getElementById("current_time").innerHTML = time;
-
-    var date = today.getDate()+' . '+(today.getMonth()+1)+' . '+today.getFullYear();
-    document.getElementById("current_date").innerHTML = date;
-}
-</script>
-
-{{ if ne .Site.Params.heweather false }}
-<script>
-  /**
-   * Heweather plugin
-   * Thanks the Heweather for supplying this free api
-   * https://www.heweather.com/
-   * https://dev.heweather.com/
-   */
-  WIDGET = {
-    CONFIG: {
-      "modules": "02",
-      "background":5,
-      "tmpColor": "rgb(200, 200, 200)",
-      "tmpSize": "0.7rem",
-      "cityColor": "rgb(200, 200, 200)",
-      "citySize": 16,
-      "aqiSize": 16,
-      "weatherIconSize": "0.7rem",
-      "alertIconSize": 18,
-      "padding": "0px 0px 0px 0px",
-      "shadow": "0",
-      "language": "auto",
-      "borderRadius": "5",
-      "fixed": "false",
-      "vertical": "center",
-      "horizontal": "center",
-      "key": "{{ .Site.Params.heweather }}"
-    }
-  }
-</script>
-<script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
-{{ end }}
-
-
 {{ if ne .Site.Params.footer.enabled false }}
   {{ $author := .Site.Params.author }}
   {{ with .Site.Params.footer }}
@@ -94,3 +38,71 @@
     </footer>
   {{ end }}
 {{ end }}
+
+
+<script>
+  var timer = setInterval(function () {
+    localTimer();
+  }, 1000);
+
+  function addZero(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
+
+  function localTimer() {
+    var today = new Date();
+    var time = addZero(today.getHours()) + ":" + addZero(today.getMinutes()) + ":" + addZero(today.getSeconds());
+    document.getElementById("current_time").innerHTML = time;
+
+    var date = today.getDate() + ' . ' + (today.getMonth() + 1) + ' . ' + today.getFullYear();
+    document.getElementById("current_date").innerHTML = date;
+  }
+</script>
+
+{{/*  Heweather  */}}
+{{ if .Site.Params.heweather }}
+<script>
+  /**
+   * Heweather plugin
+   * Thanks the Heweather for supplying this free api
+   * https://www.heweather.com/
+   * https://dev.heweather.com/
+   */
+  WIDGET = {
+    CONFIG: {
+      "modules": "02",
+      "background": 5,
+      "tmpColor": "rgb(200, 200, 200)",
+      "tmpSize": "0.7rem",
+      "cityColor": "rgb(200, 200, 200)",
+      "citySize": 16,
+      "aqiSize": 16,
+      "weatherIconSize": "0.7rem",
+      "alertIconSize": 18,
+      "padding": "0px 0px 0px 0px",
+      "shadow": "0",
+      "language": "auto",
+      "borderRadius": "5",
+      "fixed": "false",
+      "vertical": "center",
+      "horizontal": "center",
+      "key": "{{ .Site.Params.heweather }}"
+    }
+  }
+</script>
+<script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+{{ end }}
+{{/*  Heweather ends  */}}
+
+{{/*  custom javascript  */}}
+{{ if .Site.Params.customJS.enabled }}
+  {{ range .Site.Params.customJS.items }}
+    {{ if ne .activated false}}
+      <script src="{{ .url | safeURL }}" defer></script>
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{/*  custom js ends  */}}

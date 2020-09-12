@@ -8,16 +8,17 @@
   {{ if .Site.Params.description }}<meta name="description" content="{{ .Site.Params.description }}" />{{ end }}
   {{ if .Site.Params.favicon }} <link rel="icon" href="{{ .Site.Params.favicon }}" /> {{ end }}
 
-  <link rel="stylesheet" href="/css/main.css" />
-  <link rel="stylesheet" href="/css/search.css" />
-  <link rel="stylesheet" href="/css/color.css" />
+  <link type="text/css" rel="stylesheet" href="/css/main.css" />
+  <link type="text/css" rel="stylesheet" href="/css/search.css" />
+  <link type="text/css" rel="stylesheet" href="/css/color.css" />
   
   {{ if .Site.Params.fontawesomeCDN }}
-    <link rel="stylesheet" href="{{ .Site.Params.fontawesomeCDN | safeURL }}" 
+    <link type="text/css" rel="stylesheet" href="{{ .Site.Params.fontawesomeCDN | safeURL }}"
       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" 
       crossorigin="anonymous" />
   {{ else }}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" 
+    <link type="text/css" rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" 
       crossorigin="anonymous" />
   {{ end }}
@@ -35,5 +36,15 @@
   </script>
 
   {{- partial "style.html" . -}}
+
+  {{/*  custom CSS  */}}
+  {{ if .Site.Params.customCSS.enabled }}
+    {{ range .Site.Params.customCSS.items }}
+      {{ if ne .activated false}}
+          <link type="text/css" rel="stylesheet" href="{{ .url | safeURL }}" />
+      {{ end }}
+    {{ end }}
+  {{ end }}
+  {{/*  custom CSS ends  */}}
 
 </head>

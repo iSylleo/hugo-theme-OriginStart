@@ -32,9 +32,11 @@ function smoothScrollToTop() {
     }
 }
 
-function showTooltip(link) {
-    if (link.getAttribute("tooltip-text")) {
-        document.getElementById("tooltiptext").innerText = link.getAttribute("tooltip-text");
+function showTooltip(bookmark) {
+    var tt = bookmark.getAttribute("tooltip-text");
+
+    if (tt) {
+        document.getElementById("tooltiptext").innerText = tt;
         document.getElementById("tooltip").style.visibility = "visible";
     }
 }

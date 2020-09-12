@@ -37,7 +37,7 @@
     {{ end }}
   {{ end }}
 
-  {{ if .Site.Params.useBlur }}
+  {{ if ne .Site.Params.useBlur false }}
     .blur, header:hover, .card, 
     .searchbox form:hover, 
     .searchbox form:focus-within, 
