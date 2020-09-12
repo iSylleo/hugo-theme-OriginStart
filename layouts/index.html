@@ -1,9 +1,12 @@
 {{ define "main" }}
 
+{{/*  search  */}}
 {{ if .Site.Params.searchEngines }}
   <section class="search">
     <div class="searchbox">
+      {{/*  search list  */}}
       <div id="search-list" class="hide-type-list">
+        {{/*  search group  */}}
         <div class="search-group">
           <span id="group-name"></span>
           <div class="search-group-list">
@@ -19,7 +22,9 @@
             {{ end }}
           </div> <!--search-group-list end-->
         </div> <!--search-group end-->
+        {{/*  search group ends  */}}
 
+        {{/*  search engines  */}}
         {{ range .Site.Params.searchEngines }}
           {{ if ne .enabled false }}
             <div class="group-items" id="group-{{ .group }}">
@@ -40,27 +45,34 @@
           {{ end }}
         {{ end }}
       </div> <!--search-list end-->
+      {{/*  search engines ends  */}}
 
       <form height="50px" action="" method="get" target="_blank" id="super-search-fm" onsubmit="return doSearch()">
         <input autocomplete="off" type="text" id="search-text" style="outline:none" autofocus="">
         <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
       </form>
     </div>
+    {{/*  search list ends  */}}
   </section>
 {{ end }}
+{{/*  search ends  */}}
 
+{{/*  hitokoto  */}}
 {{ if ne .Site.Params.hitokoto false }}
   <div class="hitokoto" onclick="hitokoto()">
     <p id="hitokoto"><i class="fas fa-spinner u-theme-f"></i></i></p>
     <p id="hitokoto-from"><i class="fas fa-spinner u-theme-f"></i></p>
   </div>
 {{ end }}
+{{/*  hitokoto ends  */}}
 
+{{/*  bookmark cards  */}}
 <section class="cards">
   {{ range .Site.Params.bookmarks }}
     {{ if ne .enabled false }}
       <div class="card">
         <h3><i class="{{ .icon }}"></i> {{ .group }} </h3>
+        {{/*  bookmarks  */}}
         <ul>
           {{ range .items }}
             {{ if ne .activated false }}
@@ -74,14 +86,11 @@
             {{ end }}
           {{ end }}
         </ul>
+        {{/*  bookmarks end  */}}
       </div>
     {{ end }}
   {{ end }}
 </section>
-
-<div id="tooltip">
-  <i class="far fa-hand-point-right u-theme-f"></i>
-  <p id="tooltiptext">tooltip</p>
-</div>
+{{/*  bookmark cards ends  */}}
 
 {{ end }}

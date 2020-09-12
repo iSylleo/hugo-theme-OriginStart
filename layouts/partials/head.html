@@ -12,6 +12,7 @@
   <link type="text/css" rel="stylesheet" href="/css/search.css" />
   <link type="text/css" rel="stylesheet" href="/css/color.css" />
   
+  {{/*  font awesome CDN link  */}}
   {{ if .Site.Params.fontawesomeCDN }}
     <link type="text/css" rel="stylesheet" href="{{ .Site.Params.fontawesomeCDN | safeURL }}"
       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" 
@@ -22,7 +23,9 @@
       integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" 
       crossorigin="anonymous" />
   {{ end }}
+  {{/*  font awesome CDN link ends  */}}
 
+  {{/*  search and init scripts  */}}
   <script src="/js/search.js"></script>
   <script src="/js/init.js"></script>
   <script>
@@ -34,10 +37,13 @@
       init({{ .Site.Params.hitokoto }});
     });
   </script>
+  {{/*  search and init scripts end  */}}
 
+  {{/*  theme style config */}}
   {{- partial "style.html" . -}}
+  {{/*  theme style config ends  */}}
 
-  {{/*  custom CSS  */}}
+  {{/*  custom CSSes  */}}
   {{ if .Site.Params.customCSS.enabled }}
     {{ range .Site.Params.customCSS.items }}
       {{ if ne .activated false}}
@@ -45,6 +51,6 @@
       {{ end }}
     {{ end }}
   {{ end }}
-  {{/*  custom CSS ends  */}}
+  {{/*  custom CSSes end  */}}
 
 </head>

@@ -45,7 +45,15 @@ function hideTooltip() {
     document.getElementById("tooltip").style.visibility = "hidden";
 }
 
+/**
+ * Do some inits when dom loaded
+ * @param {string} hiType Type of hitokoto: https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%82%E6%95%B0%EF%BC%89
+ */
 function init(hiType) {
+    if (window.location != window.parent.location) {
+        window.parent.location = window.location;
+    }
+
     hitokoto(hiType);
     setInterval(hitokoto, 300000, hiType);
 

@@ -1,13 +1,18 @@
+{{/*  footer  */}}
 {{ if ne .Site.Params.footer.enabled false }}
   {{ $author := .Site.Params.author }}
   {{ with .Site.Params.footer }}
     <footer>
+      
+      {{/*  custom footer  */}}
       {{ if .custom }}
         <div class="footer-line">
           <span> {{ .custom | safeHTML }} </span>
         </div>
       {{ end }}
+      {{/*  custom footer ends  */}}
 
+      {{/*  hugo and theme info  */}}
       {{ if ne .hugo false }}
         <div class="footer-line">
           Powered by <a target="_blank" one-link-mark="yes" href="https://gohugo.io" title="Hugo" class="u-theme-f"> Hugo </a> |
@@ -17,7 +22,9 @@
           </a>
         </div>
       {{ end }}
+      {{/*  hugo and theme info end  */}}
 
+      {{/*  copyright info  */}}
       {{ if ne .copyright false }}
         <div class="footer-line">
           <i class="far fa-copyright fa-fw"></i>
@@ -29,15 +36,20 @@
           </span>
         </div>
       {{ end }}
+      {{/*  copyright info ends  */}}
 
+      {{/*  ICP info  */}}
       {{ if .icp }}
         <div class="footer-line">
           <span> {{ .icp | safeHTML }}</span>
         </div>
       {{ end }}
+      {{/*  ICP info ends  */}}
+
     </footer>
   {{ end }}
 {{ end }}
+{{/*  footer ends  */}}
 
 
 <script>
@@ -62,7 +74,7 @@
   }
 </script>
 
-{{/*  Heweather  */}}
+{{/*  Heweather config */}}
 {{ if .Site.Params.heweather }}
 <script>
   /**
@@ -95,9 +107,9 @@
 </script>
 <script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
 {{ end }}
-{{/*  Heweather ends  */}}
+{{/*  Heweather config ends  */}}
 
-{{/*  custom javascript  */}}
+{{/*  custom javascripts  */}}
 {{ if .Site.Params.customJS.enabled }}
   {{ range .Site.Params.customJS.items }}
     {{ if ne .activated false}}
@@ -105,4 +117,4 @@
     {{ end }}
   {{ end }}
 {{ end }}
-{{/*  custom js ends  */}}
+{{/*  custom javascripts end  */}}

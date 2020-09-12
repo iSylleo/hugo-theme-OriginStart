@@ -9,9 +9,18 @@
       {{- block "main" . }}{{- end }}
     </main>
 
+    {{/*  tooltip (description of bookmark)  */}}
+    <div id="tooltip">
+      <i class="far fa-hand-point-right u-theme-f"></i>
+      <p id="tooltiptext">tooltip</p>
+    </div>
+    {{/*  tooltip ends  */}}
+
+    {{/*  back to top button  */}}
     <div id="back2top-btn" onclick="smoothScrollToTop();">
       <i class="fas fa-rocket u-theme-f"></i>
     </div>
+    {{/*  back to top button ends  */}}
   
     {{- partial "footer.html" . -}}
   </body>

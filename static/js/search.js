@@ -9,7 +9,7 @@ function doSearch() {
         window.open(
             document.getElementById("super-search-fm").action.replace(
                 /{query}/g, searchText
-            ));
+        ));
     }
 
     return false;

@@ -1,4 +1,5 @@
 <style type="text/css">
+  {{/*  background  */}}
   {{ if .Site.Params.background }}
     {{ with .Site.Params.background }}
       body {
@@ -6,7 +7,9 @@
       }
     {{ end }}
   {{ end }}
+  {{/*  background ends  */}}
 
+  {{/*  theme color  */}}
   {{ if .Site.Params.themeColor }}
     {{ with .Site.Params.themeColor }}
       .u-theme-f, 
@@ -36,7 +39,9 @@
       }
     {{ end }}
   {{ end }}
+  {{/*  theme color ends  */}}
 
+  {{/*  use blur theme  */}}
   {{ if ne .Site.Params.useBlur false }}
     .blur, header:hover, .card, 
     .searchbox form:hover, 
@@ -61,5 +66,6 @@
       background-color: rgba(0, 0, 0, 0.6);
     }
   {{ end }}
+  {{/*  use blur theme ends  */}}
 
 </style>
