@@ -68,12 +68,6 @@ header {
   transition: all .3s linear;
 }
 
-.blur,
-header:hover {
-  backdrop-filter: blur(.2rem);
-  box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
-}
-
 nav {
   display: flex;
   flex-direction: row;
@@ -158,9 +152,6 @@ nav ul {
 }
 
 .card {
-  backdrop-filter: blur(.2rem);
-  /* background-color: rgba(0, 0, 0, 0.08); */
-  box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
   border-radius: 1rem;
   display: grid;
   padding: 1rem;

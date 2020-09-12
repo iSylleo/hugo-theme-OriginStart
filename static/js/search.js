@@ -16,7 +16,7 @@ function doSearch() {
 }
 
 function changeSearchGroup(groupName) {
-    checkedGroup = document.querySelector("group-checked");
+    checkedGroup = document.querySelector(".group-checked");
     checkedGroup? checkedGroup.classList.remove("group-checked"): {};
 
     document.getElementById("group-name").innerText = groupName;

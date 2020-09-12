@@ -35,4 +35,29 @@
 
   {{ end }}
 
+  {{ if .Site.Params.useBlur }}
+  .blur, header:hover, .card, 
+  .searchbox form:hover, 
+  .searchbox form:focus-within, 
+  .search-group-list, 
+  .search-engines input:hover+label span,
+  .search-engines input:checked+label span {
+    backdrop-filter: blur(.2rem);
+    box-shadow: 0 0 10px rgb(0, 0, 0, 0.6);
+  }
+  {{ else }}
+  .card {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+
+  .blur, header:hover, 
+  .search-group-list, 
+  .searchbox form:hover, 
+  .searchbox form:focus-within, 
+  .search-engines input:hover+label span,
+  .search-engines input:checked+label span {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  {{ end }}
+
 </style>
