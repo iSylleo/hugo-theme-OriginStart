@@ -32,7 +32,7 @@
             {{ if .since }}
               {{- if lt .since now.Year }} {{ .since }} - {{ end }}
             {{ end }}
-            {{ now.Year -}}&nbsp;&nbsp;{{ $author }}
+            {{ now.Year -}}&nbsp;&nbsp;{{ $author -}}
           </span>
         </div>
       {{ end }}

@@ -155,12 +155,18 @@ nav ul {
   border-radius: 1rem;
   display: grid;
   padding: 1rem;
-  height: 200px;
+  /* height: 200px; */
   max-height: 200px;
   overflow-x: hidden;
   overflow-y: auto;
   scrollbar-width: none;
   transition: all .4s linear;
+}
+
+@media screen and (min-width: 1440px) {
+  .card {
+    max-height: 400px;
+  }
 }
 
 .card::-webkit-scrollbar {
