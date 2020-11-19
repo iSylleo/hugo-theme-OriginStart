@@ -19,11 +19,11 @@ jobs:
       - name: Build
         run: |
           cd exampleSite
-          git clone --depth=1 https://github.com/SylleoYr/hugo-theme-OriginStart themes/OriginStart
+          git clone --depth=1 https://github.com/SylleoYr/hugo-theme-OriginStart.git themes/OriginStart
           hugo --gc --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./exampleSite/public
