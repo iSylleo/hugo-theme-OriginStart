@@ -1,6 +1,8 @@
-<h1 style="text-align: center;"> 🚀OriginStart </h1>
+<h1 align="center"> 🚀OriginStart </h1>
 
-<p style="text-align: center;"> A journey of a thousand miles begins with one step. </p>
+<p align="center"> A journey of a thousand miles begins with one step. </p>
+
+---
 
 > [**OriginStart**](https://github.com/SylleoYr/hugo-theme-OriginStart) is a responsive theme for Hugo which is forked and modified from [freshstart](https://github.com/rz3n/hugo-theme-freshstart). OriginStart provides you a clean and easy-to-use start page for your Internet experience.
 
@@ -66,7 +68,7 @@ See [`config.yaml`](./exampleSite/config.yaml).
 
 ## Thanks
 
-Thanks to the following projects (no orders):
+Thanks to the following projects (unordered):
 
 * [Font Awesome](https://fontawesome.com/icons?d=gallery)
 * [Hugo](https://gohugo.io)
