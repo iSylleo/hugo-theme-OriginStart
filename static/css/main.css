@@ -112,11 +112,11 @@ nav ul {
   -webkit-text-emphasis: circle currentcolor;
 }
 
-#poetry, #poetry-from {
+#poetry, #poetry-author {
   color:#f44336;
 }
 
-#poetry-from {
+#poetry-author {
   text-align: right;
   margin-top: 1vh;
 }

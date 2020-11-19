@@ -65,13 +65,17 @@
       <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
       <div class="poetry" onclick="getPoetry('{{ .api }}', '')">
         <p id="poetry"><i class="fas fa-spinner u-theme-f"></i></p>
-        <p id="poetry-from"><i class="fas fa-spinner u-theme-f"></i></p>
+        {{ if .showAuthor }}
+          <p id="poetry-author"><i class="fas fa-spinner u-theme-f"></i></p>
+        {{ end }}
       </div>
     {{ else }}
     {{/* Thanks hitokoto (https://hitokoto.cn/) for supplying this api */}}
       <div class="poetry" onclick="getPoetry('hitokoto', '{{ .hitokoto }}')">
         <p id="poetry"><i class="fas fa-spinner u-theme-f"></i></p>
-        <p id="poetry-from"><i class="fas fa-spinner u-theme-f"></i></p>
+        {{ if .showAuthor }}
+          <p id="poetry-author"><i class="fas fa-spinner u-theme-f"></i></p>
+        {{ end }}
       </div>
     {{ end }}
   {{ end }}

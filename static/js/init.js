@@ -6,15 +6,15 @@ function getPoetry(api, hiType) {
     }
 
     const p = document.getElementById("poetry");
-    const pf = document.getElementById("poetry-from");
+    const pa = document.getElementById("poetry-author");
 
     if (api.trim().toLowerCase() === "jinrishici") {
         jinrishici.load(result => {
             p.innerText = result.data.content;
-            pf.innerText = "—— "
-                         + result.data.origin.author
-                         + "【" + result.data.origin.dynasty + "】"
-                         + " ·《" + result.data.origin.title + "》";
+            pa ? pa.innerText = "—— "
+                              + result.data.origin.author
+                              + "【" + result.data.origin.dynasty + "】"
+                              + " ·《" + result.data.origin.title + "》" : {};
         });
         return;
     }
@@ -24,7 +24,7 @@ function getPoetry(api, hiType) {
         .then(response => response.json())
         .then(data => {
             p.innerText = data.hitokoto;
-            pf.innerText = "—— " + data.from_who + " ·《"+ data.from + "》";
+            pa ? pa.innerText = "—— " + data.from_who + " ·《"+ data.from + "》" : {};
         })
     }, 256);
 }

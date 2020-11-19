@@ -1,33 +1,24 @@
-# freshStart
-> A clear and responsive theme for [Hugo](//gohugo.io/) witch provides a dynamic environment to manage bookmarks in a clean and fast start page.
+<h1 style="text-align: center;"> OriginStart </h1>
 
-**Some changes are made in this branch:** 
+<p style="text-align: center;"> A journey of a thousand miles begins with one step. </p>
 
-- Add background configuration in [`config.yaml`](#Configuration), now you can use image from the Internet as your background.
-- Add [hitokoto](https://hitokoto.cn/)
-- Modify search form for supporting multiple search engines, now you can:
-  - Group search engines;
-  - Have a better look with multiple search engines.
-  - Styles of search form are inspired by [geeknav](https://github.com/CrazyBoyM/geeknav).
-- Files changed:
-  - new file:   .gitignore
-  - modified:   layouts/_default/baseof.html
-  - modified:   layouts/index.html
-  - modified:   layouts/partials/head.html
-  - modified:   layouts/partials/header.html
-  - modified:   layouts/partials/footer.html
-  - modified:   static/css/main.css
-  - new file:   static/css/search.css
-  - new file:   static/js/init.js
-  - new file:   static/js/search.js
-  - ...
+> [**OriginStart**](https://github.com/SylleoYr/hugo-theme-OriginStart) is a responsive theme for Hugo which is forked and modified from [freshstart](https://github.com/rz3n/hugo-theme-freshstart). OriginStart provides you a clean and easy-to-use start page for your Internet experience.
+
+## Features
+
+- Responsive design
+- Custom search engines
+- 
 
 ## Screenshot
+
 ![startPageColumns = false](./images/screenshot.png)
 
 
 ## Installation
+
 Inside your Hugo site directory run:
+
 ```
 $ git submodule add https://github.com/rz3n/hugo-theme-freshstart.git themes/freshstart
 ```
@@ -35,6 +26,7 @@ For more information read the official [setup guide](//gohugo.io/overview/instal
 
 
 ## Configuration
+
 Example `config.yaml`:
 
 ```yaml
@@ -159,4 +151,5 @@ params:
 ```
 
 ## Sources
+
 * Icons from [Font Awesome](https://fontawesome.com/icons?d=gallery)

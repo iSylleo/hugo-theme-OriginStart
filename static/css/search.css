@@ -74,30 +74,20 @@
     margin: 0 0 0 0.5rem;
 }
 
+.search-group:hover,
 .search-group:hover .search-group-list {
     display: block;
+    cursor: pointer;
 }
 
 .search-group-list {
     display: none;
     position: absolute;
     top: 30px;
-    padding: 9pt 0;
+    padding: 7.5px 7.5px;
     width: 20pc;
     border-radius: 15px;
 }
-
-/* .search-group-list::before {
-    position: absolute;
-    top: -1.2pc;
-    left: 10px;
-    content: ' ';
-    display: block;
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-bottom-color: rgba(0, 0, 0, 0.6);
-} */
 
 .search-group-list label {
     display: block;
