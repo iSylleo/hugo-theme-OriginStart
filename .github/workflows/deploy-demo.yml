@@ -18,6 +18,7 @@ jobs:
 
       - name: Build
         run: |
+          pwd
           cd exampleSite
           hugo --gc --minify --cleanDestinationDir -t /home/runner/work/hugo-theme-OriginStart/hugo-theme-OriginStart
 
