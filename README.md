@@ -42,6 +42,8 @@ $ git submodule add https://github.com/SylleoYr/hugo-theme-OriginStart themes/Or
 ```
 ### Usage
 
+Copy the contents in the `exampleSite` directory into your site root directory, and then:
+
 **To preview:**
 
 ```bash
@@ -56,13 +58,15 @@ Then open `http://localhost:1313` in your browser to preview the site.
 hugo
 ```
 
-It will build the site in `public` directory.
+It will build the site in the `public` directory.
 
 ## Configuration
 
 See [`config.yaml`](./exampleSite/config.yaml).
 
 ## Thanks
+
+Thanks to the following projects (no orders):
 
 * [Font Awesome](https://fontawesome.com/icons?d=gallery)
 * [Hugo](https://gohugo.io)
