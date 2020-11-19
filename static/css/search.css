@@ -195,11 +195,11 @@
 
 #search-button:hover {
     background: rgba(30, 30, 30, 1.0);
-    cursor: pointer
+    cursor: pointer;
 }
 
 #search-button i {
-    /* color: #fff; */
+    color: #fff;
     font-size: 18px
 }
 

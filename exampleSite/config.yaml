@@ -1,45 +1,82 @@
 baseURL: https://example.com
 languageCode: en-us
 hasCJKLanguage: true
-title: Your site title
-theme: freshstart
+title: 🚀OriginStart | 千里之行始于足下
+theme: OriginStart
 
 params:
-  author: Ricardo Franzen
-  description: rfranzen.com
+  author: 
+  description: A responsive and clean start page, make your Internet easier as well.
   favicon: /favicon.ico
-  background: https://image.example.com/
+  # background color or image. Wrap the hex color with double quotes
+  # Wrap image url with url(), like url(https://xxx.png)
+  background: "#b9dec9"
 
-  # Type of hitokoto, for more information: 
-  # see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%82%E6%95%B0%EF%BC%89
-  # for multiple types, use & to connect them
-  hitokoto: c=i&c=h
+  # Enable ribbon canvas as the background
+  # size: the size of ribbon, default: 90.
+  # alpha: the opacity of line (0 ~ 1), default: 0.6.
+  # zIndex: the index of z space, default: -1.
+  ribbon:
+    enabled: true
+    # size: 
+    # alpha: 0.8
+    # zIndex: 
+
+  # Theme color of your site, all the css color format is supported.
+  # ! Note: Wrap the hex color with double quotes, like "#5689ff".
+  themeColor: "#fa346a"
+  # font color
+  fontColor: "black"
+  # Indicate whether to use blur theme (not compatible with all browsers).
+  useBlur: false
+
+  # API of displaying a sentence of a poetry.
+  poetry: 
+    enabled: true
+    # Only one of "hitokoto" and "jinrishici" are accepted.
+    # Another words will be ignored, and "hitokoto" is the default.
+    api: jinrishici  # hitokoto
+    # Type of hitokoto, for more information: 
+    # see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B%EF%BC%88%E5%8F%82%E6%95%B0%EF%BC%89.
+    # For multiple types, use & to connect them (example: c=i&c=h).
+    hitokoto: c=i
+    # Whether to show author of the poetry
+    showAuthor: false
+
+  # API key of Heweather. Leave empty or set false to disable it.
+  # Go https://dev.heweather.com/widget/ to get your api key
+  heweather: 
 
   # CDN for font-awesome 5.14.0 all.min.css.
   # Default is https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css.
-  fontawesomeCDN: 
+  fontawesomeCDN: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css
 
   searchEngines:
-    # Please ensure the group name and the search engine name is unique.
-    - group: Default
-      icon: fas fa-search
+    # Please ensure the names of group and search engine is unique.
+    - group: SEARCH
+      enabled: true  # default is true
+      # icon: icon-name color
+      icon: fas fa-search indigo
       items:
+        - name: Doge
+          activated: true  # default is true
+          # the {query} in url will be replaced to your input
+          url : https://www.dogedoge.com/results?q={query}
         - name: Baidu
-          activated: true
           url: https://www.baidu.com/s?wd={query}&ie=utf-8
+        - name: GitHub
+          url: https://github.com/search?q={query}&ref=opensearch
+        - name: Bilibili
+          url: https://search.bilibili.com/all?keyword={query}
+        - name: Zhihu
+          url: https://www.zhihu.com/search?type=content&q={query}
+        - name: Douban
+          url: https://www.douban.com/search?q={query}
         - name: Google
-          activated: true
+          activated: false
           url: https://google.com/search
-        - name: DuckDuckGo
-          activated: true
-          url: https://www.duckduckgo.com
-        - name: Bai
-          activated: true
-          url: https://www.baidu.com/s?wd={query}&ie=utf-8
-        - name: Goog
-          activated: true
-          url: https://google.com/search
-    - group: Academic
+    - group: ACADEMIC
+      enabled: false
       icon: fas fa-search
       items:
         - name: Gole
@@ -48,16 +85,18 @@ params:
         - name: DckGo
           activated: true
           url: https://www.duckduckgo.com
-    - group: Music
+    - group: MUSIC
+      enabled: true
       icon: fas fa-search
       items:
-        - name: Gogle
+        - name: ogle
           activated: true
           url: https://google.com/search
         - name: ckDuckGo
           activated: true
           url: https://www.duckduckgo.com
-    - group: Movie
+    - group: MOVIE
+      enabled: true
       icon: fas fa-search
       items:
         - name: Googl
@@ -69,50 +108,166 @@ params:
 
 
   nav:
-    - name: Gmail
-      icon: fas fa-envelope red
-      url: https://mail.google.com
-
-    - name: Twitter
-      icon: fab fa-twitter aqua
-      url: https://twitter.com
-    
-    - name: Facebook
-      icon: fab fa-facebook blue
-      url: https://facebook.com
+    - name: GitHub
+      # icon: icon-name color
+      icon: fab fa-github
+      url: https://github.com/
+    - name: Gitee
+      icon: fab fa-git-square 
+      url: https:/gitee.com/
 
 
   bookmarks:
-    - group: dev
-      icon: fas fa-code-branch
+    - group: MOOC
+      enabled: true
+      # icon: icon-name color
+      icon: fa fa-book blue
       items:
-        - name: cloudflare
-          url: https://cloudflare.com
-        - name: codepen.io
-          url: https://codepen.io
-        - name: github
-          icon: fab fa-github
-          url: https://github.com
-        - name: gitlab
-          icon: fab fa-gitlab
-          url: https://gitlab.com
+        - name: 学堂在线
+          activated: true
+          icon: 
+          url: https://www.xuetangx.com/
+          # It's recommed to be a brief description
+          description: 国家精品在线课程学习平台
 
-    - group: docs
-      icon: fas fa-folder-open
+        - name: icourse163
+          url: https://www.icourse163.org/
+          description: 中国大学MOOC（慕课）
+
+        - name: 网易公开课
+          url: https://open.163.com/
+          description: 
+
+        - name: Coursera
+          url: https://www.coursera.org/
+          description: 
+
+        - name: Coursade
+          url: https://www.coursade.com/
+          description: 
+
+        - name: edX China
+          url: https://www.edx.org/edxchina
+          description: 
+
+    - group: DEV
+      icon: fas fa-code indigo
       items:
-        - name: docker
-          url: https://docs.docker.com/
-
-        - name: puppet
-          url: https://puppet.com/docs/puppet/latest/
-
-        - name: terraform
-          url: https://www.terraform.io/docs/
+        - name: Nerd Fonts
+          url: https://www.nerdfonts.com/
+          description: 
+        - name: Font Awesome
+          icon: fab fa-font-awesome
+          url: https://fontawesome.com/icons?d=gallery
+          description: The web's most popular icon set and toolkit. 
+        - name: Iconfont
+          icon: fas fa-icons
+          url: https://www.iconfont.cn/
+          description: 阿里巴巴矢量图标库
+        - name: HarmonyOS
+          icon: 
+          url: https://www.harmonyos.com/cn/home/
+          description: HarmonyOS - Huawei
+        - name: OpenHarmony
+          icon: 
+          url: https://openharmony.gitee.com
+          description: 面向全场景的分布式开源操作系统
     
-    - group: tools
-      icon: fas fa-tools
+    - group: COMMUNITY
+      icon: fa fa-comments pink
       items:
-        - name: some site
-          url: #
-        - name: another site
-          url: #
+        - name: MCbbs
+          url: https://www.mcbbs.net/
+          description: 
+        - name: 掘金
+          url: https://juejin.im/
+          description: 
+        - name: DOSU
+          url: https://www.deepinos.org/
+          description: Deepin & UOS 爱好者社区
+        - name: Linux中国
+          url: https://linux.cn/
+          description: 
+        - name: OpenAtom
+          url: https://www.openatom.org/#/
+          description: 开放原子开源基金会
+
+    - group: thanks
+      icon: fa fa-heart red
+      items:
+        - name: Hugo
+          url: https://gohugo.io/
+          description: 
+
+        - name: freshstart
+          url: https://github.com/rz3n/hugo-theme-freshstart
+          description: 
+
+        - name: Hitokoto
+          activated: true
+          url: https://hitokoto.cn/
+          description: Hitokoto · 一言
+
+        - name: 今日诗词
+          activated: true
+          url: https://www.jinrishici.com/
+          description: 诗词实时智能推荐
+
+        - name: Heweather
+          url: https://www.heweather.com/
+          description: 
+
+        - name: ribbon.js
+          url: https://github.com/hustcc/ribbon.js
+          description: 
+
+        - name: Font Awesome
+          icon: fab fa-font-awesome
+          url: https://fontawesome.com/icons?d=gallery
+
+  # footer confituration
+  footer:
+    enabled: true
+    # Indicate whether to show Hugo and theme info
+    hugo: true
+    copyright: false
+    since: 2020
+    # ICP information (HTML is supported)
+    icp: ''
+    # custom footer information (HTML is supported)
+    custom: ''
+
+  # !=================================================================================
+  # ! NOTE: The following configs may cause dangerous behaviors with wrong use.
+  # ! You should be aware of what you are importing. And you are at your own risk.
+  # !=================================================================================
+  # Custom javascript, may be not stable.
+  # If this encountered any problems, disable this.
+  # The js files inside your site dir are supported, like "/js/custom.js".
+  # All the custom js files will be added after the <footer>,
+  # and will be executed in defer way.
+  customJS:
+    enabled: false
+    items:
+      - name: live2d
+        activated: false
+        url: https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
+
+  # Custom CSS style, may be not stable.
+  # If this encountered any problems, disable this.
+  # The css files inside your site dir are supported, like "/css/custom.css".
+  # All the css files will be added at the end of <head>,
+  # along this, you can custom the CSS style of your site here.
+  # ! But you need to pay attention to the priority of the css selector, otherwise the custom style will not take effect.
+  # Thus a recommeded way to custom the site style is:
+  # 1) copy the *.css files and style.html from the theme dir to your site root directory
+  #    while keeping the same directory structure and file name;
+  # 2) then edit the copied CSS file.
+  # All in one word, here is recommended to import external CSS files.
+  customCSS:
+    enabled: false
+    items:
+      - name: Custom
+        activated: false
+        url: /css/custom.css
+      
