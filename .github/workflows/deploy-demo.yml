@@ -18,9 +18,9 @@ jobs:
 
       - name: Build
         run: |
-          pwd
           cd exampleSite
-          hugo --gc --minify --cleanDestinationDir -t /home/runner/work/hugo-theme-OriginStart/hugo-theme-OriginStart
+          git clone --depth=1 https://github.com/SylleoYr/hugo-theme-OriginStart themes/OriginStart
+          hugo --gc --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
