@@ -3,11 +3,25 @@
   {{ if .Site.Params.background }}
     {{ with .Site.Params.background }}
       body {
-        background-image: url({{ . | safeURL }});
+        background: {{ . | safeCSS }};
+        background-position: top;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
       }
     {{ end }}
   {{ end }}
   {{/*  background ends  */}}
+
+  {{/*  font color  */}}
+  {{ if .Site.Params.fontColor }}
+    {{ with .Site.Params.fontColor }}
+      * {
+        color: {{ . | safeCSS }}
+      }
+    {{ end }}
+  {{ end }}
+  {{/*  font color ends  */}}
 
   {{/*  theme color  */}}
   {{ if .Site.Params.themeColor }}

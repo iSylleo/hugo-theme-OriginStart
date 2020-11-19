@@ -1,5 +1,6 @@
 function changeSearchEngine(engine) {
     document.getElementById("super-search-fm").action = engine;
+    document.getElementById("search-text").focus();
 }
 
 function doSearch() {
@@ -26,4 +27,6 @@ function changeSearchGroup(groupName) {
     var firstEngine = currentGroup.firstElementChild.firstElementChild.firstElementChild;
     firstEngine.checked = true;
     document.getElementById("super-search-fm").action = firstEngine.value;
+
+    document.getElementById("search-text").focus();
 }

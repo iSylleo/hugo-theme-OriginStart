@@ -9,7 +9,7 @@
 }
 
 body {
-  background-image: url(../images/bg.webp);
+  background: url(../images/bg.webp);
   background-position: top;
   background-size: cover;
   background-attachment: fixed;
@@ -220,7 +220,6 @@ nav ul {
 }
 
 .card ul li * {
-  color: rgb(200, 200, 200);
   transition: all .3s linear;
 }
 
