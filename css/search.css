@@ -1,0 +1,250 @@
+* {
+    /* user-select: none; */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.fa-2x {
+    padding-top: 15px;
+    font-size: 1.5em;
+}
+
+/* --------------------------
+ * search
+*/
+.search {
+    margin: 2rem auto;
+    padding: 0.5rem 0;
+    text-align: center;
+    max-width: 60%;
+}
+
+.searchbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchbox form {
+    /* padding: 1rem 0 0 0; */
+    position: relative;
+    border-radius: 1rem;
+    transition: all .3s linear;
+}
+
+.searchbox input {
+    background: none;
+    border: 0;
+    border-bottom: solid 3px rgb(244, 67, 54);
+    height: 36px;
+    line-height: 36px;
+    font-size: 1.2pc;
+    color: #f44336;
+    padding: 0 4px;
+    width: 85%;
+}
+
+#search-list {
+    position: relative;
+    display: inline-flex;
+    margin-bottom: 5px;
+}
+
+.search-group {
+    z-index: 13;
+}
+
+.search-group:hover {
+    height: auto;
+}
+
+.search-group>span {
+    display: block;
+    height: 31px;
+    line-height: 31px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f44336;
+}
+
+.search-group>span::after {
+    content: "\f0da";
+    font-family: "Font Awesome 5 Free";
+    /* font-size: 15px; */
+    margin: 0 0 0 0.5rem;
+}
+
+.search-group:hover,
+.search-group:hover .search-group-list {
+    display: block;
+    cursor: pointer;
+}
+
+.search-group-list {
+    display: none;
+    position: absolute;
+    top: 30px;
+    padding: 7.5px 7.5px;
+    width: 20pc;
+    border-radius: 15px;
+}
+
+.search-group-list label {
+    display: block;
+    font-size: 1pc;
+    line-height: 2pc;
+    text-align: center;
+    width: 25%;
+    float: left;
+    transition: all .3s linear;
+}
+
+.search-group-list label:hover {
+    color: #f44336;
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.search-group-list .tile-lg {
+    color: #fff;
+    width: 3pc;
+    height: 3pc;
+    font-size: 1.25rem;
+    line-height: 3rem;
+    border-radius: .3rem;
+    display: block;
+    margin: auto
+}
+
+.group-items {
+    display: none;
+}
+
+.group-checked {
+    display: block
+}
+
+.group-checked .search-engines {
+    padding-left: 0;
+    display: block
+}
+
+.search-engines {
+    margin: 0;
+    text-align: left;
+}
+
+.search-engines label {
+    margin: 0
+}
+
+.search-engines li {
+    display: inline-block;
+    list-style: none;
+}
+
+.search-engines li label {
+    display: inline-block;
+    padding: 0 0 0 0.5rem;
+    font-size: 16px;
+    line-height: 31px;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+}
+
+.search-engines li label::first-letter {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.search-engines li label span {
+  padding: 5px;
+  border-radius: 6px;
+  transition: all .2s linear;
+}
+
+.search-engines input:hover+label span,
+.search-engines input:checked+label span {
+    color: rgb(244, 67, 54);
+}
+
+.search-engines input:checked+label span {
+    border-bottom: solid 2px rgb(244, 67, 54);
+}
+
+::-webkit-input-placeholder {
+    /* WebKit, Blink, Edge */
+    color: #888;
+}
+
+
+#search-text {
+    font-size: 1.2pc;
+}
+
+#search-button {
+    background: #f44336;
+    border: 0;
+    width: 60px;
+    height: 36px;
+    border-radius: 30px;
+    outline: none;
+    margin: 10px 0;
+    transition: all .3s linear;
+}
+
+#search-button:hover {
+    background: rgba(30, 30, 30, 1.0);
+    cursor: pointer;
+}
+
+#search-button i {
+    color: #fff;
+    font-size: 18px
+}
+
+@media screen and (max-width:767px) {
+    .group-items {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .search {
+        max-width: 90%;
+    }
+
+    .search-engines {
+        white-space: nowrap;
+        overflow: scroll
+    }
+
+    .search-list {
+        height: 30px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        white-space: nowrap
+    }
+}
+
+@media screen and (max-width:768px) {
+    .group-items {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .search {
+        max-width: 90%;
+    }
+
+    .search-engines {
+        white-space: nowrap;
+        overflow: scroll
+    }
+
+    .search-list {
+        height: 30px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        white-space: nowrap
+    }
+}

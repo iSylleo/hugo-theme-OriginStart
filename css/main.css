@@ -1,0 +1,295 @@
+/* --------------------------
+ * global
+*/
+
+* {
+  color: rgb(200, 200, 200);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url(../images/bg.webp);
+  background-position: top;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* content-visibility: auto; */
+  font-size: 16px;
+  font-family: system-ui, sans-serif;
+  font-weight: 400;
+}
+
+a:link, a:active, a:hover { text-decoration: none; }
+
+h3 {
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+.u-theme-f {
+  color: rgb(244, 67, 54);
+}
+
+/* --------------------------
+ * efects
+*/
+.clearfix:after {
+  clear: both;
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.shadow { box-shadow: 10px 20px 50px 10px rgb(0, 0, 0); }
+
+
+/* --------------------------
+ * header
+*/
+header {
+  font-size: 1rem;
+  padding: 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 13;
+  transition: all .3s linear;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-size: 0.7rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0.1rem 0;
+}
+
+.nav-left ul li:hover {
+  cursor: pointer;
+}
+
+.nav-left { margin-right: auto; }
+.nav-left ul li { padding: 0 0.3rem; }
+.nav-right ul li { padding: 0 0.6rem; }
+
+/* --------------------------
+ * poetry
+*/
+
+.poetry {
+  max-width: 717px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-emphasis: open currentcolor;
+  -webkit-text-emphasis: open currentcolor;
+  text-emphasis-position: under right;
+  -webkit-text-emphasis-position: under right;
+  text-decoration: none;
+}
+
+.poetry:hover {
+  cursor: pointer;
+  text-emphasis: circle currentcolor;
+  -webkit-text-emphasis: circle currentcolor;
+}
+
+#poetry, #poetry-author {
+  color:#f44336;
+}
+
+#poetry-author {
+  text-align: right;
+  margin-top: 1vh;
+}
+
+/* --------------------------
+ * cards
+*/
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  max-width: 90%;
+  margin: 0 auto 2rem auto;
+  place-items: top;
+}
+
+@media screen and (min-width: 1440px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+
+@media screen and (max-width:767px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width:768px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+.card {
+  border-radius: 1rem;
+  display: grid;
+  padding: 1rem;
+  /* height: 200px; */
+  max-height: 200px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  transition: all .4s linear;
+}
+
+@media screen and (min-width: 1440px) {
+  .card {
+    max-height: 400px;
+  }
+}
+
+.card::-webkit-scrollbar {
+  display: none;
+}
+
+/* .card .card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.card .card-inner-scroll {
+  width: calc(100% + 1rem);
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+} */
+
+.card:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.card h3 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+.card ul {
+  list-style: none;
+  column-gap: 0.3rem;
+  columns: 4 100px;
+
+}
+
+.card ul li {
+  margin: 0.2rem;
+  width: max-content;
+  height: max-content;
+}
+
+.card ul li a {
+  font-size: 15px;
+}
+
+.card ul li * {
+  transition: all .3s linear;
+}
+
+.card ul li:hover * {
+  color: #f44336;
+  cursor: pointer;
+}
+
+.card ul li::first-letter,
+.card ul li i {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* --------------------------
+ * tooltip
+*/
+#tooltip {
+  visibility: hidden;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  max-width: 35%;
+  line-break: auto;
+  padding: 5px;
+  border-radius: 0 10px 0 10px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 5px rgb(244, 67, 54);
+}
+
+#tooltip p {
+  display: inline;
+}
+
+/* --------------------------
+ * back-to-top button
+*/
+
+#back2top-btn {
+  /* visibility: hidden; */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  position: fixed;
+  bottom: 2rem;
+  right: -3rem;
+  /* z-index: 13; */
+  text-align: center;
+  transition: all .4s linear;
+}
+
+#back2top-btn:hover {
+  cursor: pointer;
+  transform: rotate(-45deg);
+  transition: all .3s linear;
+}
+
+footer {
+  margin: 1rem 0;
+}
+
+.footer-line {
+  /* color: rgba(30, 30, 30, 1.0); */
+  width: 100%;
+  text-align: center;
+  font-size: .6rem;
+  overflow-wrap: break-word;
+  padding: 0 0 3px 0;
+}
