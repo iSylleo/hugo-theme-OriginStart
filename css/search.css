@@ -96,7 +96,7 @@
     text-align: center;
     width: 25%;
     float: left;
-    transition: all .3s linear;
+    transition: all .2s linear;
 }
 
 .search-group-list label:hover {
