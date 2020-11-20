@@ -95,8 +95,8 @@
               <li>
                 <a onclick="window.open({{ .url | safeURL }}, '_blank');" one-link-mark="yes" rel="nofollow" 
                   tooltip-text="{{ .description }}" onmouseover="showTooltip(this);" onmouseout="hideTooltip();">
-                  {{ if .icon }} <i class="{{ .icon }}"></i> {{ end }}
-                  &nbsp;{{- .name -}}
+                  {{ if .icon }}<i class="{{ .icon }}"></i>&nbsp;{{ end }}
+                  {{- .name -}}
                 </a>
               </li>
             {{ end }}
