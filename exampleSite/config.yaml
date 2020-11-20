@@ -247,11 +247,14 @@ params:
   # All the custom js files will be added after the <footer>,
   # and will be executed in defer way.
   customJS:
-    enabled: false
+    enabled: true
     items:
       - name: live2d
         activated: false
         url: https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
+      - name: Alert
+        activated: true
+        url: ./js/alert.js
 
   # Custom CSS style, may be not stable.
   # If this encountered any problems, disable this.

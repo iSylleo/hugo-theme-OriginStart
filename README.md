@@ -6,6 +6,8 @@
 
 > [**OriginStart**](https://github.com/SylleoYr/hugo-theme-OriginStart) is a responsive theme for Hugo which is forked and modified from [freshstart](https://github.com/rz3n/hugo-theme-freshstart). OriginStart provides you a clean and easy-to-use start page for your Internet experience.
 
+[GitHub](https://github.com/SylleoYr/hugo-theme-OriginStart) | [Gitee](https://gitee.com/SylleoYr/hugo-theme-OriginStart)
+
 ## Features
 
 - Responsive design
