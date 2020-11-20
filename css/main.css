@@ -88,7 +88,7 @@ nav ul {
 
 .nav-left { margin-right: auto; }
 .nav-left ul li { padding: 0 0.3rem; }
-.nav-right ul li { padding: 0 0.6rem; }
+.nav-right ul li { padding: 0 0.3rem; }
 
 /* --------------------------
  * poetry
@@ -193,7 +193,7 @@ nav ul {
 } */
 
 .card:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .card h3 {
