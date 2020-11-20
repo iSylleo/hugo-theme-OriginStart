@@ -12,9 +12,9 @@
           <div class="search-group-list">
             {{ range .Site.Params.searchEngines }}
               {{ if ne .enabled false }}
-                <label for="group-{{ .group }}" onclick="changeSearchGroup(this.innerText)">
-                  <span class="tile-lg" style="color: #fff;">
-                    <i class="{{ .icon }}"></i>
+                <label for="group-{{ .group }}" onclick="changeSearchGroup(this.innerText.trim())" style="color: #fff;">
+                  <span class="tile-lg">
+                    <i class="{{ .icon }}" style="color: #fff;"></i>
                   </span>
                   {{- .group -}}
                 </label>
@@ -35,7 +35,7 @@
                       <input type="radio" name="engine" id="engine-{{ .name }}" 
                         value="{{ .url | safeURL }}" hidden onchange="changeSearchEngine(this.value)">
                       <label for="engine-{{ .name }}">
-                        <span> {{ .name }} </span>
+                        <span> {{- .name -}} </span>
                       </label>
                     </li>
                   {{ end }}
@@ -87,7 +87,7 @@
   {{ range .Site.Params.bookmarks }}
     {{ if ne .enabled false }}
       <div class="card">
-        <h3><i class="{{ .icon }}"></i>&nbsp;{{ .group }}</h3>
+        <h3><i class="{{ .icon }}"></i>&nbsp;{{- .group -}}</h3>
         {{/*  bookmarks  */}}
         <ul>
           {{ range .items }}
