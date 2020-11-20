@@ -10,23 +10,23 @@ params:
   favicon: /favicon.ico
   # background color or image. Wrap the hex color with double quotes
   # Wrap image url with url(), like url(https://xxx.png)
-  background: "#b9dec9"
+  background: ""
 
   # Enable ribbon canvas as the background
   # size: the size of ribbon, default: 90.
   # alpha: the opacity of line (0 ~ 1), default: 0.6.
   # zIndex: the index of z space, default: -1.
   ribbon:
-    enabled: true
+    enabled: false
     # size: 
     # alpha: 0.8
     # zIndex: 
 
   # Theme color of your site, all the css color format is supported.
   # ! Note: Wrap the hex color with double quotes, like "#5689ff".
-  themeColor: "#fa346a"
+  themeColor: ""
   # font color
-  fontColor: "black"
+  fontColor: ""
   # Indicate whether to use blur theme (not compatible with all browsers).
   useBlur: false
 
