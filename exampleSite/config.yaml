@@ -85,7 +85,7 @@ params:
         - name: DckGo
           activated: true
           url: https://www.duckduckgo.com
-    - group: MUSIC
+    - group: MUSIC pink
       enabled: true
       icon: fas fa-search
       items:
@@ -97,7 +97,7 @@ params:
           url: https://www.duckduckgo.com
     - group: MOVIE
       enabled: true
-      icon: fas fa-search
+      icon: fas fa-search cyan
       items:
         - name: Googl
           activated: true
