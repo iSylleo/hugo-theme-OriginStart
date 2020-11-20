@@ -111,10 +111,10 @@ params:
     - name: GitHub
       # icon: icon-name color
       icon: fab fa-github
-      url: https://github.com/
+      url: https://github.com/SylleoYr/hugo-theme-OriginStart
     - name: Gitee
       icon: fab fa-git-square 
-      url: https:/gitee.com/
+      url: https:/gitee.com/SylleoYr/hugo-theme-OriginStart
 
 
   bookmarks:
