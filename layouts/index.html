@@ -87,7 +87,7 @@
   {{ range .Site.Params.bookmarks }}
     {{ if ne .enabled false }}
       <div class="card">
-        <h3><i class="{{ .icon }}"></i> {{ .group }} </h3>
+        <h3><i class="{{ .icon }}"></i>&nbsp;{{ .group }}</h3>
         {{/*  bookmarks  */}}
         <ul>
           {{ range .items }}
@@ -96,7 +96,7 @@
                 <a onclick="window.open({{ .url | safeURL }}, '_blank');" one-link-mark="yes" rel="nofollow" 
                   tooltip-text="{{ .description }}" onmouseover="showTooltip(this);" onmouseout="hideTooltip();">
                   {{ if .icon }} <i class="{{ .icon }}"></i> {{ end }}
-                  {{- .name -}}
+                  &nbsp;{{- .name -}}
                 </a>
               </li>
             {{ end }}
