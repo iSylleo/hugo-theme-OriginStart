@@ -156,7 +156,7 @@ params:
         - name: Nerd Fonts
           url: https://www.nerdfonts.com/
           description: 
-        - name: Font Awesome
+        - name: FontAwesome
           icon: fab fa-font-awesome
           url: https://fontawesome.com/icons?d=gallery
           description: The web's most popular icon set and toolkit. 
@@ -221,7 +221,7 @@ params:
           url: https://github.com/hustcc/ribbon.js
           description: 
 
-        - name: Font Awesome
+        - name: FontAwesome
           icon: fab fa-font-awesome
           url: https://fontawesome.com/icons?d=gallery
 
