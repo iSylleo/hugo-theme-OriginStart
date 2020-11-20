@@ -12,9 +12,9 @@
           <div class="search-group-list">
             {{ range .Site.Params.searchEngines }}
               {{ if ne .enabled false }}
-                <label for="group-{{ .group }}" onclick="changeSearchGroup(this.innerText.trim())" style="color: #fff;">
+                <label for="group-{{ .group }}" onclick="changeSearchGroup(this.innerText.trim())">
                   <span class="tile-lg">
-                    <i class="{{ .icon }}" style="color: #fff;"></i>
+                    <i class="{{ .icon }}"></i>
                   </span>
                   {{- .group -}}
                 </label>

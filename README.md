@@ -77,5 +77,5 @@ Thanks to the following projects (unordered):
 * [freshstart](https://github.com/rz3n/hugo-theme-freshstart)
 * [Hitokoto](https://hitokoto.cn/)
 * [今日诗词](https://www.jinrishici.com/)
-* [Heweather](https://www.heweather.com/)
+* [HeWeather](https://www.heweather.com/)
 * [ribbon.js](https://github.com/hustcc/ribbon.js)

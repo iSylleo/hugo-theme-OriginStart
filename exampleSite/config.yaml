@@ -213,7 +213,7 @@ params:
           url: https://www.jinrishici.com/
           description: 诗词实时智能推荐
 
-        - name: Heweather
+        - name: HeWeather
           url: https://www.heweather.com/
           description: 
 
