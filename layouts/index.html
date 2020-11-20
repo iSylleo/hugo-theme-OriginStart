@@ -13,7 +13,7 @@
             {{ range .Site.Params.searchEngines }}
               {{ if ne .enabled false }}
                 <label for="group-{{ .group }}" onclick="changeSearchGroup(this.innerText)">
-                  <span class="tile-lg">
+                  <span class="tile-lg" style="color: #fff;">
                     <i class="{{ .icon }}"></i>
                   </span>
                   {{- .group -}}
