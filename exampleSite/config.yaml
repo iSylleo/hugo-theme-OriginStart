@@ -8,8 +8,11 @@ params:
   author: 
   description: A responsive and clean start page, make your Internet easier as well.
   favicon: /favicon.ico
-  # background color or image. Wrap the hex color with double quotes
-  # Wrap image url with url(), like url(https://xxx.png)
+
+  # CSS background properties, background color or(and) image are supported.
+  # Wrap the hex color with double quotes,
+  # Wrap the image url with url().
+  # e.g. "#f9f4dc url(/bg.png)"
   background: ""
 
   # Enable ribbon canvas as the background
@@ -52,7 +55,7 @@ params:
   fontawesomeCDN: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css
 
   searchEngines:
-    # Please ensure the names of group and search engine is unique.
+    # Please ensure the names of group and search engine are unique.
     - group: SEARCH
       enabled: true  # default is true
       # icon: icon-name color

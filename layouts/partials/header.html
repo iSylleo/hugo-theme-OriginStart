@@ -6,7 +6,13 @@
         {{ range .Site.Params.nav }}
           <li>
             <a onclick="window.open({{ .url | safeURL }}, '_blank')" tooltip-text="{{ .name }}" onmouseover="showTooltip(this);"
-              onmouseout="hideTooltip();"><i class="{{ .icon }} u-theme-f"></i></a>
+              onmouseout="hideTooltip();">
+              {{- if .icon -}}
+              <i class="{{ .icon }} u-theme-f"></i>
+              {{- else -}}
+              <i class="fa fa-globe u-theme-f"></i>
+              {{- end -}}
+            </a>
           </li>
         {{ end }}
       </ul>
