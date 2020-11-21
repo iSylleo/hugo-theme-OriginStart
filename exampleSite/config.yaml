@@ -51,8 +51,20 @@ params:
   heweather: 
 
   # CDN for font-awesome 5.14.0 all.min.css.
+  # If you do not know what this option means, skip it.
   # Default is https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css.
   fontawesomeCDN: https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css
+
+
+  nav:
+    - name: GitHub
+      # icon: icon-name color
+      icon: fab fa-github
+      url: https://github.com/SylleoYr/hugo-theme-OriginStart
+    - name: Gitee
+      icon: fab fa-git-square 
+      url: https://gitee.com/SylleoYr/hugo-theme-OriginStart
+
 
   searchEngines:
     # Please ensure the names of group and search engine are unique.
@@ -110,16 +122,6 @@ params:
           url: https://www.duckduckgo.com
 
 
-  nav:
-    - name: GitHub
-      # icon: icon-name color
-      icon: fab fa-github
-      url: https://github.com/SylleoYr/hugo-theme-OriginStart
-    - name: Gitee
-      icon: fab fa-git-square 
-      url: https://gitee.com/SylleoYr/hugo-theme-OriginStart
-
-
   bookmarks:
     - group: MOOC
       enabled: true
@@ -132,23 +134,18 @@ params:
           url: https://www.xuetangx.com/
           # It's recommed to be a brief description
           description: 国家精品在线课程学习平台
-
         - name: icourse163
           url: https://www.icourse163.org/
           description: 中国大学MOOC（慕课）
-
         - name: 网易公开课
           url: https://open.163.com/
           description: 
-
         - name: Coursera
           url: https://www.coursera.org/
           description: 
-
         - name: Coursade
           url: https://www.coursade.com/
           description: 
-
         - name: edX China
           url: https://www.edx.org/edxchina
           description: 
@@ -201,32 +198,27 @@ params:
         - name: Hugo
           url: https://gohugo.io/
           description: 
-
         - name: freshstart
           url: https://github.com/rz3n/hugo-theme-freshstart
           description: 
-
         - name: Hitokoto
           activated: true
           url: https://hitokoto.cn/
           description: Hitokoto · 一言
-
         - name: 今日诗词
           activated: true
           url: https://www.jinrishici.com/
           description: 诗词实时智能推荐
-
         - name: HeWeather
           url: https://www.heweather.com/
           description: 
-
         - name: ribbon.js
           url: https://github.com/hustcc/ribbon.js
           description: 
-
         - name: FontAwesome
           icon: fab fa-font-awesome
           url: https://fontawesome.com/icons?d=gallery
+
 
   # footer confituration
   footer:
@@ -239,6 +231,7 @@ params:
     icp: ''
     # custom footer information (HTML is supported)
     custom: ''
+
 
   # !=================================================================================
   # ! NOTE: The following configs may cause dangerous behaviors with wrong use.

@@ -14,7 +14,7 @@
               {{ if ne .enabled false }}
                 <label for="group-{{ .group }}" onclick="changeSearchGroup(this.innerText.trim())">
                   <span class="tile-lg">
-                    <i class="{{ .icon }}"></i>
+                    <i class="{{ .icon }} u-theme-f"></i>
                   </span>
                   {{- .group -}}
                 </label>
