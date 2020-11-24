@@ -154,7 +154,7 @@ nav ul {
 .card {
   border-radius: 1rem;
   display: grid;
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   /* height: 200px; */
   max-height: 200px;
   overflow-x: hidden;
