@@ -1,4 +1,4 @@
-<h2 align="center"> 🚀OriginStart </h2>
+<h1 align="center"> 🚀OriginStart </h1>
 
 <p align="center"> A journey of a thousand miles begins with one step. </p>
 
