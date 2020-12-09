@@ -77,6 +77,10 @@ It will generate the static files in the `public` directory.
 
 See [`config.yaml`](./exampleSite/config.yaml).
 
+> **:information_source: Note:** the example site is prompted with a message, please disable it in your production environment:
+> - please delete `alert.js` in `static/js/` directory,
+> - or set the `activated` property of `Alert` of `customJS` to false, or delete this item.
+
 ## Thanks
 
 Thanks to the following projects (unordered):
